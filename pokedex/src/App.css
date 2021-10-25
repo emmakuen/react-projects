@@ -1,0 +1,249 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    text-align: center;
+    background-color: #13193B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2.2rem;
+}
+
+.title {
+    font-size: 2rem;
+    color: #dbb20f;
+    margin: 1rem;
+    margin-top: 5vh;
+    text-transform: uppercase;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+}
+
+.container.winner {
+    background-color: #face1f70;
+    padding: 5px;
+    margin: 20px;
+}
+
+.Pokecard {
+    width: 250px;
+    height: 400px;
+    padding: 40px;
+    margin: 20px;
+    background: rgb(10, 30, 64);
+    background: linear-gradient(84deg, rgba(10, 30, 64, 1) 0%,
+            rgba(62, 3, 37, 1) 100%);
+    position: relative;
+    color: #FFDD57;
+    text-align: center;
+    border: 1px solid rgb(61, 56, 56);
+    box-shadow: rgba(209, 202, 202, 0.15) 0px 15px 25px, rgba(255, 255, 255, 0.05) 0px 5px 10px;
+}
+
+.Pokecard.small {
+    height: 300px;
+    max-height: 35%;
+    max-width: 20%;
+}
+
+@media (max-width: 850px) {
+    .Pokecard.small {
+        height: 300px;
+        max-height: 35%;
+        max-width: 35%;
+    }
+}
+
+.Pokecard:hover {
+    animation: moveCute 0.5s ease-out forwards;
+    z-index: 100;
+}
+
+.Pokecard::after {
+    content: "";
+    margin: 5%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid #FFDD57;
+    border-radius: 10px;
+    width: 90%;
+    height: 92%;
+}
+
+.Pokecard-img {
+    height: 60%;
+}
+
+
+
+@keyframes moveCute {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+
+    100% {
+        transform: scale(1.2) rotate(10deg);
+    }
+}
+
+.Pokecard h3 {
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.Pokecard.small h3 {
+    font-size: 16px;
+}
+
+@media (max-width: 520px) {
+    .Pokecard.small {
+        padding: 20px;
+    }
+
+    .Pokecard.small h3 {
+        font-size: 12px;
+    }
+}
+
+.Pokecard .specs-container {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 25px;
+    font-size: 12px;
+}
+
+.Pokecard.small .specs-container {
+    padding-top: 20px;
+    font-size: 10px;
+}
+
+
+
+.spec {
+    line-height: 1.5;
+}
+
+.type-spec {
+    text-align: left;
+}
+
+.experience-spec {
+    text-align: right;
+}
+
+.Pokecard .type-spec span,
+.Pokecard .experience-spec span {
+    font-size: 2rem;
+}
+
+.Pokecard.small .type-spec span,
+.Pokecard.small .experience-spec span {
+    font-size: 1.5rem;
+}
+
+.btn {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border-style: none;
+    background-color: #FF860C;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 900;
+    border: rgb(255, 234, 234) solid 1px;
+    box-shadow: rgba(209, 202, 202, 0.15) 0px 15px 25px, rgba(255, 255, 255, 0.05) 0px 5px 10px;
+}
+
+.btn.home {
+    left: 5%;
+}
+
+/* .btn:hover {
+    background-image: linear-gradient(to right,
+            #E7484F,
+            #F68B1D,
+            #FCED00,
+            #009E4F,
+            #00AAC3,
+            #732982);
+    animation: slidebg 2s linear infinite;
+}
+
+@keyframes slidebg {
+    to {
+        background-position: 20vw;
+    }
+} */
+
+.btn {
+    width: 100px;
+    height: 40px;
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid #FFDD57;
+    outline: none;
+    transition: 1s ease-in-out;
+}
+
+svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    fill: none;
+    stroke: #FFDD57;
+    stroke-dasharray: 150 480;
+    stroke-dashoffset: 150;
+    transition: 1s ease-in-out;
+}
+
+.btn:hover {
+    transition: 1s ease-in-out;
+    background: #380628;
+}
+
+.btn:hover svg {
+    stroke-dashoffset: -480;
+}
+
+.btn span {
+    color: #FFDD57;
+    font-size: 18px;
+    font-weight: 100;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.score,
+.result {
+    font-size: 1.2rem;
+    color: #dbb20f;
+    text-align: left;
+    margin-left: 30px;
+}
+
+.result {
+    font-size: 2rem;
+    text-align: center;
+    margin: 0;
+}
+
+.score:last-of-type {
+    text-align: right;
+    margin: 0;
+    margin-right: 30px;
+}

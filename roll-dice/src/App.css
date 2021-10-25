@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.RollDice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background-color: #263238;
+}
+
+.dice-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.Die {
+    font-size: 10rem;
+    color: #fff;
+    padding: 1rem 2rem;
+}
+
+.Die.animate {
+    animation: shake 1s cubic-bezier(.36, .07, .19, .97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+@keyframes shake {
+
+    10%,
+    90% {
+        transform: translate3d(-8px, 0, 0) rotate(-2deg);
+        transform-origin: bottom right;
+    }
+
+    20%,
+    80% {
+        transform: translate3d(16px, 0, 0) rotate(4deg);
+        transform-origin: bottom left;
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-16px, 0, 0) rotate(-4deg);
+        transform-origin: bottom right;
+    }
+
+    40%,
+    60% {
+        transform: translate3d(16px, 0, 0) rotate(4deg);
+        transform-origin: bottom left;
+    }
+}
+
+.btn {
+    border: none;
+    background-color: #4b788f;
+    color: #fff;
+    font-size: 1.2rem;
+    width: 200px;
+    padding: 15px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #4792b8;
+}
+
+.btn.disabled {
+    background-color: #46575f;
+}

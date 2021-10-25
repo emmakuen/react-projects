@@ -1,0 +1,44 @@
+h1 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(206, 121, 47);
+}
+
+.NewBoxForm {
+    margin: 20px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    background-color: antiquewhite;
+    border: 1px sandybrown solid;
+    border-radius: 10px;
+}
+
+.NewBoxForm input {
+    margin: 20px 0;
+    height: 1.3rem;
+    border: 1px sandybrown solid;
+    border-radius: 5px;
+}
+
+.NewBoxForm label {
+    font-size: 14px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    color: rgb(80, 80, 80);
+}
+
+.NewBoxForm button {
+    padding: 10px;
+    margin: 20px 0;
+    border: 1px sandybrown solid;
+    background-color: rgb(209, 159, 111);
+    border-radius: 5px;
+    color: white;
+    text-transform: uppercase;
+}
+
+.NewBoxForm button:hover {
+    background-color: coral;
+    color: white;
+}
