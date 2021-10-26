@@ -11,6 +11,7 @@ class BoxList extends Component {
             boxes: []
         }
         this.addItem = this.addItem.bind(this)
+        this.deleteItem = this.deleteItem.bind(this)
     }
 
     addItem(box) {
@@ -18,6 +19,14 @@ class BoxList extends Component {
         this.setState(st => ({
             boxes: [...st.boxes, newBox]
         }))
+    }
+
+    deleteItem(id) {
+        let boxes = this.state.boxes
+        let updatedBoxes = boxes.filter(box => box.id !== id)
+        this.setState({
+            boxes: updatedBoxes
+        })
     }
 
     render() {
@@ -32,6 +41,8 @@ class BoxList extends Component {
                             width={box.width}
                             height={box.height}
                             key={box.id}
+                            id={box.id}
+                            deleteItem={this.deleteItem}
                         />
                     )}
 
