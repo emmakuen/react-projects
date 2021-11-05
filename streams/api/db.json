@@ -1,6 +1,5 @@
 {
-  "streams": [
-    {
+  "streams": [{
       "title": "My Stream",
       "description": "This is a great stream",
       "id": 1
@@ -9,71 +8,6 @@
       "title": "AweStream",
       "description": "Soon to be top stream!",
       "id": 2
-    },
-    {
-      "title": "Beauty Stream",
-      "description": "How many days?",
-      "userId": "105881370322367127622",
-      "id": 3
-    },
-    {
-      "title": "Bounty Stream",
-      "description": "Find the inner beauty in yourself!",
-      "userId": "105881370322367127622",
-      "id": 4
-    },
-    {
-      "title": "Programmatic Navigation",
-      "description": "Which one did I edit anyway",
-      "userId": "105881370322367127622",
-      "id": 5
-    },
-    {
-      "title": "Newest Stream",
-      "description": "Well, it didn't... Duh",
-      "userId": "105881370322367127622",
-      "id": 6
-    },
-    {
-      "title": "Happy Stream",
-      "description": "Here goes happy happy",
-      "userId": "105881370322367127622",
-      "id": 7
-    },
-    {
-      "title": "hello",
-      "description": "Hello from the other side",
-      "userId": "105881370322367127622",
-      "id": 8
-    },
-    {
-      "title": "Copy-Paste",
-      "description": "Ultimate life saver stream",
-      "userId": "105881370322367127622",
-      "id": 9
-    },
-    {
-      "title": "Wow",
-      "description": "You will say wow",
-      "userId": "105881370322367127622",
-      "id": 10
-    },
-    {
-      "title": "New World",
-      "description": "Find your flow in this world.",
-      "id": 11
-    },
-    {
-      "title": "Coolesty",
-      "description": "For cool kids on the block",
-      "userId": "105881370322367127622",
-      "id": 12
-    },
-    {
-      "title": "Bromance",
-      "description": "Fun little stream about brofun",
-      "userId": "105881370322367127622",
-      "id": 13
     }
   ]
 }
