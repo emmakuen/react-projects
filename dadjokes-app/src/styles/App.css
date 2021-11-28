@@ -1,0 +1,8 @@
+.App {
+  height: 70vh;
+  position: relative;
+  margin: 5% 10%;
+  border: 1px solid #cccccc;
+  border-radius: 10px;
+  overflow: hidden;
+}

@@ -1,0 +1,29 @@
+.JokeRow {
+    display: flex;
+    width: 70%;
+    flex-direction: row;
+    margin: 0 40px;
+    padding: 1rem;
+    align-items: center;
+    border-bottom: 1px #efefef solid;
+    font-size: 1.3rem;
+    color: rgb(90, 92, 94);
+    position: relative;
+}
+
+.JokeRow:hover {
+    background-color: #efefef3d;
+}
+
+.Joke {
+    margin: 1rem 7.5rem;
+    width: 75%;
+    text-align: left;
+}
+
+.JokeRow .EmojiRating {
+    position: absolute;
+    top: 50%;
+    right: 50px;
+    transform: translateY(-50%);
+}

@@ -1,0 +1,41 @@
+.Score {
+    border: 2px solid;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 17px 15px -5px rgba(0, 0, 0, 0.2);
+}
+
+.Score .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-55%);
+    font-size: 2rem;
+    color: #b9b9b9;
+}
+
+.Score .arrow.up {
+    left: -90%;
+}
+
+.Score .arrow.down {
+    right: -100%;
+}
+
+.Score .arrow.up:hover,
+.Score .arrow.up:active {
+    color: rgb(78, 196, 156);
+}
+
+.Score .arrow.down:hover,
+.Score .arrow.down:active {
+    color: rgb(255, 57, 22);
+}
+
+.Score .Score-num {
+    font-size: 1.2rem;
+}
