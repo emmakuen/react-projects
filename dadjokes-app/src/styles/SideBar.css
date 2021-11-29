@@ -1,7 +1,7 @@
 .App .SideBar {
     position: absolute;
     width: 300px;
-    background-color: rgb(218, 145, 50);
+    background-color: rgb(252, 174, 73);
     height: 100%;
     display: flex;
     padding-bottom: 3%;
@@ -12,6 +12,12 @@
 
 .SideBar-emoji {
     font-size: 7rem;
+}
+
+.SideBar .button-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
 }
 
 .SideBar button {
@@ -31,4 +37,26 @@
 
 .SideBar button:active {
     transform: translateY(1px);
+}
+
+.SideBar .notification {
+    position: absolute;
+    top: 70px;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 10px;
+    width: 8rem;
+    display: flex;
+    justify-content: center;
+}
+
+.SideBar .notification::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 9px solid transparent;
+    border-top: 0;
+    border-bottom: 18px solid rgba(255, 255, 255, 0.7);
+    top: -18px;
+    left: 5rem;
 }
