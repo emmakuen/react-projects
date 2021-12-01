@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
+import { generatePalette } from "../utils/colorHelper";
 import "../styles/ColorBox.css";
+import seedPalettes from "../utils/seedPalettes";
 
 const ColorBox = ({ color, name }) => {
   const [showOverlay, setShowOverlay] = useState(false);
@@ -90,6 +92,7 @@ const ColorBox = ({ color, name }) => {
     }, 1500);
   };
 
+  console.log(generatePalette(seedPalettes[4]));
   return (
     <CopyToClipboard text={color} onCopy={changeOverlayState}>
       <div style={colorBoxStyle} className="ColorBox">
