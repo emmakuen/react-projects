@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import "../styles/ColorBox.css";
 
 const ColorBox = ({ color, name }) => {
+  const [showOverlay, setShowOverlay] = useState(false);
   const colorBoxStyle = {
     width: "20%",
     height: "25%",
@@ -43,7 +44,7 @@ const ColorBox = ({ color, name }) => {
     fontSize: "12px",
   };
 
-  const seeMoreButton = {
+  const seeMoreButtonStyle = {
     backgroundColor: "rgba(255, 255, 255, 0.4)",
     position: "absolute",
     bottom: "0",
@@ -56,9 +57,53 @@ const ColorBox = ({ color, name }) => {
     color: "white",
   };
 
+  const copyOverlayStyle = {
+    opacity: "0",
+    backgroundColor: color,
+    zIndex: "0",
+    width: "100%",
+    height: "100%",
+    transform: "scale(0)",
+    transition: "transform 0.6s ease-in-out",
+  };
+
+  const overlayTextStyle = {
+    position: "fixed",
+    bottom: "0",
+    left: "0",
+    right: "0",
+    top: "0",
+    color: "white",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    fontSize: "4rem",
+    transform: "scale(0.1)",
+    opacity: "0",
+    flexDirection: "column",
+  };
+
+  const changeOverlayState = () => {
+    setShowOverlay(true);
+    setTimeout(() => {
+      setShowOverlay(false);
+    }, 1500);
+  };
+
   return (
-    <CopyToClipboard text={color}>
+    <CopyToClipboard text={color} onCopy={changeOverlayState}>
       <div style={colorBoxStyle} className="ColorBox">
+        <div
+          style={copyOverlayStyle}
+          className={`copy-overlay${showOverlay && " show"}`}
+        />
+        <div
+          style={overlayTextStyle}
+          className={`copy-message${showOverlay && " show"}`}
+        >
+          <h1>Copied!</h1>
+          <p>{color}</p>
+        </div>
         <div className="copy-container">
           <div style={boxContentStyle} className="box-content">
             <span>{name}</span>
@@ -67,7 +112,7 @@ const ColorBox = ({ color, name }) => {
             Copy
           </button>
         </div>
-        <span style={seeMoreButton} className="see-more">
+        <span style={seeMoreButtonStyle} className="see-more">
           More
         </span>
       </div>

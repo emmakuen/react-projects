@@ -4,6 +4,7 @@ import ColorBox from "./ColorBox";
 const Palette = ({ colors, emoji, id, paletteName }) => {
   const PaletteStyles = {
     height: "100vh",
+    overflow: "hidden",
   };
   const PaletteColorsStyles = {
     height: "90%",
