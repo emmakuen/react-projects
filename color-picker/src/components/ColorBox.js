@@ -1,4 +1,5 @@
 import React from "react";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 import "../styles/ColorBox.css";
 
 const ColorBox = ({ color, name }) => {
@@ -56,19 +57,21 @@ const ColorBox = ({ color, name }) => {
   };
 
   return (
-    <div style={colorBoxStyle} className="ColorBox">
-      <div className="copy-container">
-        <div style={boxContentStyle} className="box-content">
-          <span>{name}</span>
+    <CopyToClipboard text={color}>
+      <div style={colorBoxStyle} className="ColorBox">
+        <div className="copy-container">
+          <div style={boxContentStyle} className="box-content">
+            <span>{name}</span>
+          </div>
+          <button style={copyButtonStyle} className="copy-button">
+            Copy
+          </button>
         </div>
-        <button style={copyButtonStyle} className="copy-button">
-          Copy
-        </button>
+        <span style={seeMoreButton} className="see-more">
+          More
+        </span>
       </div>
-      <span style={seeMoreButton} className="see-more">
-        More
-      </span>
-    </div>
+    </CopyToClipboard>
   );
 };
 
