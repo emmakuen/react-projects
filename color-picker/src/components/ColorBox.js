@@ -1,15 +1,13 @@
 import React, { useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
-import { generatePalette } from "../utils/colorHelper";
 import "../styles/ColorBox.css";
-import seedPalettes from "../utils/seedPalettes";
 
-const ColorBox = ({ color, name }) => {
+const ColorBox = ({ hex, name }) => {
   const [showOverlay, setShowOverlay] = useState(false);
   const colorBoxStyle = {
     width: "20%",
     height: "25%",
-    backgroundColor: color,
+    backgroundColor: hex,
     margin: "0",
     padding: "0",
     display: "inline-block",
@@ -61,7 +59,7 @@ const ColorBox = ({ color, name }) => {
 
   const copyOverlayStyle = {
     opacity: "0",
-    backgroundColor: color,
+    backgroundColor: hex,
     zIndex: "0",
     width: "100%",
     height: "100%",
@@ -92,9 +90,8 @@ const ColorBox = ({ color, name }) => {
     }, 1500);
   };
 
-  console.log(generatePalette(seedPalettes[4]));
   return (
-    <CopyToClipboard text={color} onCopy={changeOverlayState}>
+    <CopyToClipboard text={hex} onCopy={changeOverlayState}>
       <div style={colorBoxStyle} className="ColorBox">
         <div
           style={copyOverlayStyle}
@@ -105,7 +102,7 @@ const ColorBox = ({ color, name }) => {
           className={`copy-message${showOverlay && " show"}`}
         >
           <h1>Copied!</h1>
-          <p>{color}</p>
+          <p>{hex}</p>
         </div>
         <div className="copy-container">
           <div style={boxContentStyle} className="box-content">
