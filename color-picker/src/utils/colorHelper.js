@@ -42,4 +42,8 @@ const generateScale = (hexColor, numberOfColors) => {
   return chroma.scale(getRange(hexColor)).mode("lab").colors(numberOfColors);
 };
 
-export { generatePalette };
+const findPalette = (seedColors, id) => {
+  return seedColors.find((palette) => palette.id === id);
+};
+
+export { generatePalette, findPalette };
