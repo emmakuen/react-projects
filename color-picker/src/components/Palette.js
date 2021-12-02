@@ -7,6 +7,8 @@ import "../styles/Palette.css";
 
 const Palette = ({ palette }) => {
   const [level, setLevel] = useState(500);
+  const [format, setFormat] = useState("hex");
+
   let colors = palette.colors[level];
   const PaletteStyles = {
     height: "100vh",
@@ -17,16 +19,24 @@ const Palette = ({ palette }) => {
   };
 
   const colorBoxes = colors.map((color) => (
-    <ColorBox {...color} key={color.hex} />
+    <ColorBox {...color} key={color.hex} formattedColor={color[format]} />
   ));
 
   const handleSliderChange = (newLevel) => {
     setLevel(newLevel);
   };
 
+  const changeFormat = (format) => {
+    setFormat(format);
+  };
+
   return (
     <div style={PaletteStyles} className="Palette">
-      <Navbar level={level} handleSliderChange={handleSliderChange} />
+      <Navbar
+        level={level}
+        handleSliderChange={handleSliderChange}
+        changeFormat={changeFormat}
+      />
       <div style={PaletteColorsStyles} className="Palette-colors">
         {colorBoxes}
       </div>

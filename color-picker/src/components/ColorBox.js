@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import "../styles/ColorBox.css";
 
-const ColorBox = ({ hex, name }) => {
+const ColorBox = ({ formattedColor, name }) => {
   const [showOverlay, setShowOverlay] = useState(false);
   const colorBoxStyle = {
     width: "20%",
     height: "25%",
-    backgroundColor: hex,
+    backgroundColor: formattedColor,
     margin: "0",
     padding: "0",
     display: "inline-block",
@@ -59,7 +59,7 @@ const ColorBox = ({ hex, name }) => {
 
   const copyOverlayStyle = {
     opacity: "0",
-    backgroundColor: hex,
+    backgroundColor: formattedColor,
     zIndex: "0",
     width: "100%",
     height: "100%",
@@ -91,7 +91,7 @@ const ColorBox = ({ hex, name }) => {
   };
 
   return (
-    <CopyToClipboard text={hex} onCopy={changeOverlayState}>
+    <CopyToClipboard text={formattedColor} onCopy={changeOverlayState}>
       <div style={colorBoxStyle} className="ColorBox">
         <div
           style={copyOverlayStyle}
@@ -102,7 +102,7 @@ const ColorBox = ({ hex, name }) => {
           className={`copy-message${showOverlay && " show"}`}
         >
           <h1>Copied!</h1>
-          <p>{hex}</p>
+          <p>{formattedColor}</p>
         </div>
         <div className="copy-container">
           <div style={boxContentStyle} className="box-content">
