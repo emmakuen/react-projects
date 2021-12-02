@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import Slider from "rc-slider";
-import "rc-slider/assets/index.css";
 import ColorBox from "./ColorBox";
 import Navbar from "./Navbar";
+import Footer from "./Footer";
 import "../styles/Palette.css";
 
 const Palette = ({ palette }) => {
@@ -12,10 +11,15 @@ const Palette = ({ palette }) => {
   let colors = palette.colors[level];
   const PaletteStyles = {
     height: "100vh",
+    display: "flex",
+    flexDirection: "column",
     overflow: "hidden",
   };
   const PaletteColorsStyles = {
     height: "90%",
+    display: "flex",
+    alignItems: "flex-start",
+    flexWrap: "wrap",
   };
 
   const colorBoxes = colors.map((color) => (
@@ -40,7 +44,7 @@ const Palette = ({ palette }) => {
       <div style={PaletteColorsStyles} className="Palette-colors">
         {colorBoxes}
       </div>
-      {/* Footer */}
+      <Footer emoji={palette.emoji} paletteName={palette.paletteName} />
     </div>
   );
 };
