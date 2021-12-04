@@ -12,7 +12,7 @@ const miniPaletteStyle = {
   },
   colors: {
     backgroundColor: "#dae1e4",
-    height: "120px",
+    height: "130px",
     width: "100%",
     display: "flex",
     flexWrap: "wrap",
@@ -27,6 +27,7 @@ const miniPaletteStyle = {
     margin: "0",
     color: "#000",
     paddingTop: "0.5rem",
+    paddingBottom: "1rem",
     fontSize: "1rem",
     position: "relative",
   },
