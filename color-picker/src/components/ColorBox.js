@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import "../styles/ColorBox.css";
 
-const ColorBox = ({ formattedColor, name }) => {
+const ColorBox = ({ formattedColor, name, moreUrl }) => {
   const [showOverlay, setShowOverlay] = useState(false);
   const colorBoxStyle = {
     width: "20%",
@@ -113,7 +113,7 @@ const ColorBox = ({ formattedColor, name }) => {
             Copy
           </button>
         </div>
-        <Link to="/" onClick={(e) => e.stopPropagation()}>
+        <Link to={moreUrl} onClick={(e) => e.stopPropagation()}>
           <span style={seeMoreButtonStyle} className="see-more">
             More
           </span>

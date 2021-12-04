@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import PaletteScreen from "./screens/PaletteScreen";
 import PaletteListScreen from "./screens/PaletteListScreen";
+import SingleColorPaletteScreen from "./screens/SingleColorPaletteScreen";
 import NotFoundScreen from "./screens/NotFoundScreen";
 import seedPalettes from "./utils/seedPalettes";
 import "./styles/App.css";
@@ -20,7 +21,7 @@ function App() {
         />
         <Route
           path="/palette/:id/:colorId"
-          element={<h1>Single Color Palette</h1>}
+          element={<SingleColorPaletteScreen />}
         />
       </Routes>
     </div>

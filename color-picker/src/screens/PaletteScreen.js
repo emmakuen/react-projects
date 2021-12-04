@@ -6,8 +6,9 @@ import NotFoundScreen from "./NotFoundScreen";
 const PaletteScreen = ({ palettes }) => {
   let params = useParams();
   const selectedPalette = findPalette(palettes, params.id);
-  if (selectedPalette !== undefined)
-    <Palette palette={generatePalette(selectedPalette)} />;
+  if (selectedPalette !== undefined) {
+    return <Palette palette={generatePalette(selectedPalette)} />;
+  }
   return <NotFoundScreen />;
 };
 

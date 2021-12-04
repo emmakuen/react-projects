@@ -23,7 +23,12 @@ const Palette = ({ palette }) => {
   };
 
   const colorBoxes = colors.map((color) => (
-    <ColorBox {...color} key={color.hex} formattedColor={color[format]} />
+    <ColorBox
+      moreUrl={`/palette/${palette.id}/${color.id}`}
+      {...color}
+      key={color.hex}
+      formattedColor={color[format]}
+    />
   ));
 
   const handleSliderChange = (newLevel) => {
