@@ -32,18 +32,20 @@ const Navbar = ({ level, handleSliderChange, changeFormat }) => {
           <span style={{ color: "#e01b5c" }}>S</span>
         </Link>
       </div>
-      <div className="slider-container">
-        <span>Level: {level}</span>
-        <div className="slider">
-          <Slider
-            defaultValue={level}
-            min={100}
-            max={900}
-            step={100}
-            onAfterChange={handleSliderChange}
-          />
+      {level && (
+        <div className="slider-container">
+          <span>Level: {level}</span>
+          <div className="slider">
+            <Slider
+              defaultValue={level}
+              min={100}
+              max={900}
+              step={100}
+              onAfterChange={handleSliderChange}
+            />
+          </div>
         </div>
-      </div>
+      )}
       <div className="select-container">
         <Select value={format} onChange={handleFormatChange}>
           <MenuItem value="hex">HEX - #ffffff</MenuItem>

@@ -16,6 +16,8 @@ const SingleColorPaletteScreen = ({ palettes }) => {
       return (
         <SingleColorPalette
           palette={generateSingleColorPalette(selectedColor)}
+          emoji={selectedPalette.emoji}
+          parentPaletteName={selectedPalette.paletteName}
         />
       );
     }

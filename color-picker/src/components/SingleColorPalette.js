@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import ColorBox from "./ColorBox";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 
-const SingleColorPalette = ({ palette }) => {
+const SingleColorPalette = ({ palette, emoji, parentPaletteName }) => {
+  const [format, setFormat] = useState("hex");
+
+  const changeFormat = (format) => {
+    setFormat(format);
+  };
+
   const PaletteStyles = {
     height: "100vh",
     display: "flex",
@@ -20,7 +28,7 @@ const SingleColorPalette = ({ palette }) => {
       <ColorBox
         {...palette.colors[key]}
         key={palette.colors[key].hex}
-        formattedColor={palette.colors[key].hex}
+        formattedColor={palette.colors[key][format]}
       />
     );
   });
@@ -28,8 +36,9 @@ const SingleColorPalette = ({ palette }) => {
   console.log(palette);
   return (
     <div style={PaletteStyles}>
-      <h1>Single Color Palette</h1>
+      <Navbar changeFormat={changeFormat} />
       <div style={PaletteColorsStyles}>{colorBoxes}</div>
+      <Footer emoji={emoji} paletteName={parentPaletteName} />
     </div>
   );
 };
