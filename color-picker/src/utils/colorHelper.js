@@ -1,6 +1,7 @@
 import chroma from "chroma-js";
 
 const levels = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900];
+const numberOfColors = 10;
 
 const generatePalette = (starterPalette) => {
   let newPalette = {
@@ -15,18 +16,44 @@ const generatePalette = (starterPalette) => {
   }
 
   for (let colorInfo of starterPalette.colors) {
-    let scale = generateScale(colorInfo.color, 10).reverse();
-    for (let item in scale) {
-      newPalette.colors[levels[item]].push({
-        name: `${colorInfo.name} ${levels[item]}`,
+    let scale = generateScale(colorInfo.color, numberOfColors).reverse();
+    for (let idx in scale) {
+      newPalette.colors[levels[idx]].push({
+        name: `${colorInfo.name} ${levels[idx]}`,
         id: colorInfo.name.toLowerCase().replace(/ /g, "-"),
-        hex: scale[item],
-        rgb: chroma(scale[item]).css(),
-        rgba: chroma(scale[item])
+        hex: scale[idx],
+        rgb: chroma(scale[idx]).css(),
+        rgba: chroma(scale[idx])
           .css()
           .replace("rgb", "rgba")
           .replace(")", ",1.0)"),
       });
+    }
+  }
+
+  return newPalette;
+};
+
+const generateSingleColorPalette = (color) => {
+  let newPalette = {
+    paletteName: color.name,
+    id: color.color,
+    colors: {},
+  };
+
+  let scale = generateScale(color.color, numberOfColors).reverse();
+  for (let idx in scale) {
+    if (parseInt(idx) !== 0) {
+      newPalette.colors[levels[idx]] = {
+        name: `${color.name} ${levels[idx]}`,
+        id: color.name.toLowerCase().replace(/ /g, "-"),
+        hex: scale[idx],
+        rgb: chroma(scale[idx]).css(),
+        rgba: chroma(scale[idx])
+          .css()
+          .replace("rgb", "rgba")
+          .replace(")", ",1.0)"),
+      };
     }
   }
 
@@ -46,4 +73,8 @@ const findPalette = (seedColors, id) => {
   return seedColors.find((palette) => palette.id === id);
 };
 
-export { generatePalette, findPalette };
+const findColor = (seedPalette, name) => {
+  return seedPalette.colors.find((color) => color.name === name);
+};
+
+export { generatePalette, findPalette, generateSingleColorPalette, findColor };

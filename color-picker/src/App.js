@@ -21,7 +21,7 @@ function App() {
         />
         <Route
           path="/palette/:id/:colorId"
-          element={<SingleColorPaletteScreen />}
+          element={<SingleColorPaletteScreen palettes={seedPalettes} />}
         />
       </Routes>
     </div>
