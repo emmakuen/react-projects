@@ -2,8 +2,14 @@ import React, { useState } from "react";
 import ColorBox from "./ColorBox";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import { Link } from "react-router-dom";
 
-const SingleColorPalette = ({ palette, emoji, parentPaletteName }) => {
+const SingleColorPalette = ({
+  palette,
+  emoji,
+  parentPaletteName,
+  parentPaletteId,
+}) => {
   const [format, setFormat] = useState("hex");
 
   const changeFormat = (format) => {
@@ -33,11 +39,17 @@ const SingleColorPalette = ({ palette, emoji, parentPaletteName }) => {
     );
   });
 
-  console.log(palette);
   return (
-    <div style={PaletteStyles}>
+    <div style={PaletteStyles} className="SingleColorPalette">
       <Navbar changeFormat={changeFormat} />
-      <div style={PaletteColorsStyles}>{colorBoxes}</div>
+      <div style={PaletteColorsStyles}>
+        {colorBoxes}
+        <div className="ColorBox go-back">
+          <Link to={`/palette/${parentPaletteId}`} className="back-button">
+            Go Back
+          </Link>
+        </div>
+      </div>
       <Footer emoji={emoji} paletteName={parentPaletteName} />
     </div>
   );

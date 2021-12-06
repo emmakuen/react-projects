@@ -18,6 +18,7 @@ const SingleColorPaletteScreen = ({ palettes }) => {
           palette={generateSingleColorPalette(selectedColor)}
           emoji={selectedPalette.emoji}
           parentPaletteName={selectedPalette.paletteName}
+          parentPaletteId={selectedPalette.id}
         />
       );
     }
