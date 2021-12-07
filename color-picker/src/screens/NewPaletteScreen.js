@@ -1,4 +1,5 @@
 import React from "react";
+import { ChromePicker } from "react-color";
 import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
@@ -8,8 +9,9 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
+import { Button } from "@mui/material";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-const drawerWidth = 240;
+const drawerWidth = 400;
 
 const NewPaletteScreen = () => {
   const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })(
@@ -105,6 +107,22 @@ const NewPaletteScreen = () => {
             <ChevronLeftIcon />
           </IconButton>
         </DrawerHeader>
+        <Typography variant="h4">Design Your Palette</Typography>
+        <div>
+          <Button variant="contained" color="secondary" size="small">
+            Clear Palette
+          </Button>
+          <Button variant="contained" color="primary" size="small">
+            Random Color
+          </Button>
+        </div>
+        <ChromePicker
+          color="teal"
+          onChangeComplete={(newColor) => console.log(newColor)}
+        />
+        <Button variant="contained" color="primary">
+          Add Color
+        </Button>
       </Drawer>
       <Main open={open}>
         <DrawerHeader />
