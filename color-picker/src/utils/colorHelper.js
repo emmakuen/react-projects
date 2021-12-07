@@ -1,4 +1,5 @@
 import chroma from "chroma-js";
+import seedPalettes from "./seedPalettes";
 
 const levels = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900];
 const numberOfColors = 10;
@@ -74,7 +75,21 @@ const findPalette = (seedColors, id) => {
 };
 
 const findColor = (seedPalette, name) => {
-  return seedPalette.colors.find((color) => color.name === name);
+  return seedPalette.colors.find(
+    (color) => color.name.toLowerCase() === name.toLowerCase()
+  );
 };
 
-export { generatePalette, findPalette, generateSingleColorPalette, findColor };
+const formatLightColor = (props) => {
+  return chroma(props.formattedColor).luminance() >= 0.5
+    ? "rgba(0, 0, 0, 0.65)"
+    : "rgba(255, 255, 255, 0.8)";
+};
+
+export {
+  generatePalette,
+  findPalette,
+  generateSingleColorPalette,
+  findColor,
+  formatLightColor,
+};

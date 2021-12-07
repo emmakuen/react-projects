@@ -1,26 +1,15 @@
 import React, { useState } from "react";
+import { withStyles } from "@material-ui/styles";
 import ColorBox from "./ColorBox";
 import Navbar from "./Navbar";
-import Footer from "./Footer";
-import "../styles/Palette.css";
+import PaletteFooter from "./PaletteFooter";
+import PaletteStyles from "../styles/PaletteStyles";
 
-const Palette = ({ palette }) => {
+const Palette = ({ palette, classes }) => {
   const [level, setLevel] = useState(500);
   const [format, setFormat] = useState("hex");
 
   let colors = palette.colors[level];
-  const PaletteStyles = {
-    height: "100vh",
-    display: "flex",
-    flexDirection: "column",
-    overflow: "hidden",
-  };
-  const PaletteColorsStyles = {
-    height: "90%",
-    display: "flex",
-    alignItems: "flex-start",
-    flexWrap: "wrap",
-  };
 
   const colorBoxes = colors.map((color) => (
     <ColorBox
@@ -40,18 +29,16 @@ const Palette = ({ palette }) => {
   };
 
   return (
-    <div style={PaletteStyles} className="Palette">
+    <div className={classes.palette}>
       <Navbar
         level={level}
         handleSliderChange={handleSliderChange}
         changeFormat={changeFormat}
       />
-      <div style={PaletteColorsStyles} className="Palette-colors">
-        {colorBoxes}
-      </div>
-      <Footer emoji={palette.emoji} paletteName={palette.paletteName} />
+      <div className={classes.paletteColors}>{colorBoxes}</div>
+      <PaletteFooter emoji={palette.emoji} paletteName={palette.paletteName} />
     </div>
   );
 };
 
-export default Palette;
+export default withStyles(PaletteStyles)(Palette);

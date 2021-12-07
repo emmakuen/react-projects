@@ -1,4 +1,4 @@
-const paletteListStyle = {
+const paletteListStyles = {
   root: {
     backgroundColor: "#e39a9d",
     height: "100vh",
@@ -28,4 +28,4 @@ const paletteListStyle = {
   },
 };
 
-export default paletteListStyle;
+export default paletteListStyles;

@@ -2,7 +2,7 @@ import React from "react";
 import { withStyles } from "@material-ui/styles";
 import { useNavigate } from "react-router-dom";
 import MiniPalette from "../components/MiniPalette";
-import paletteListStyle from "../styles/paletteListStyle";
+import paletteListStyles from "../styles/paletteListStyles";
 
 const PaletteListScreen = ({ palettes, classes }) => {
   let navigate = useNavigate();
@@ -29,4 +29,4 @@ const PaletteListScreen = ({ palettes, classes }) => {
   );
 };
 
-export default withStyles(paletteListStyle)(PaletteListScreen);
+export default withStyles(paletteListStyles)(PaletteListScreen);

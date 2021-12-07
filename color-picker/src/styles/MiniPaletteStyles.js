@@ -1,4 +1,4 @@
-const miniPaletteStyle = {
+const MiniPaletteStyles = {
   root: {
     backgroundColor: "#fff",
     border: "1px solid gray",
@@ -45,4 +45,4 @@ const miniPaletteStyle = {
   },
 };
 
-export default miniPaletteStyle;
+export default MiniPaletteStyles;

@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { withStyles } from "@material-ui/styles";
 import ColorBox from "./ColorBox";
 import Navbar from "./Navbar";
-import Footer from "./Footer";
+import PaletteFooter from "./PaletteFooter";
+import PaletteStyles from "../styles/PaletteStyles";
 import { Link } from "react-router-dom";
 
 const SingleColorPalette = ({
@@ -9,24 +11,12 @@ const SingleColorPalette = ({
   emoji,
   parentPaletteName,
   parentPaletteId,
+  classes,
 }) => {
   const [format, setFormat] = useState("hex");
 
   const changeFormat = (format) => {
     setFormat(format);
-  };
-
-  const PaletteStyles = {
-    height: "100vh",
-    display: "flex",
-    flexDirection: "column",
-    overflow: "hidden",
-  };
-  const PaletteColorsStyles = {
-    height: "90%",
-    display: "flex",
-    alignItems: "flex-start",
-    flexWrap: "wrap",
   };
 
   const colorBoxes = Object.keys(palette.colors).map((key, index) => {
@@ -40,19 +30,22 @@ const SingleColorPalette = ({
   });
 
   return (
-    <div style={PaletteStyles} className="SingleColorPalette">
+    <div className={classes.palette}>
       <Navbar changeFormat={changeFormat} />
-      <div style={PaletteColorsStyles}>
+      <div className={classes.paletteColors}>
         {colorBoxes}
-        <div className="ColorBox go-back">
-          <Link to={`/palette/${parentPaletteId}`} className="back-button">
+        <div className={classes.goBack}>
+          <Link
+            to={`/palette/${parentPaletteId}`}
+            className={classes.goBackText}
+          >
             Go Back
           </Link>
         </div>
       </div>
-      <Footer emoji={emoji} paletteName={parentPaletteName} />
+      <PaletteFooter emoji={emoji} paletteName={parentPaletteName} />
     </div>
   );
 };
 
-export default SingleColorPalette;
+export default withStyles(PaletteStyles)(SingleColorPalette);

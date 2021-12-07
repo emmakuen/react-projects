@@ -1,6 +1,6 @@
 import React from "react";
 import { withStyles } from "@material-ui/styles";
-import miniPaletteStyle from "../styles/miniPaletteStyle";
+import MiniPaletteStyles from "../styles/MiniPaletteStyles";
 
 const MiniPalette = ({
   classes,
@@ -33,4 +33,4 @@ const MiniPalette = ({
   );
 };
 
-export default withStyles(miniPaletteStyle)(MiniPalette);
+export default withStyles(MiniPaletteStyles)(MiniPalette);

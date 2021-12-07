@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Slider from "rc-slider";
-import "rc-slider/assets/index.css";
-import "../styles/Navbar.css";
+import { withStyles } from "@material-ui/styles";
 import { Select, MenuItem, Snackbar, IconButton } from "@mui/material";
+import Slider from "rc-slider";
 import CloseIcon from "@mui/icons-material/Close";
 
-const Navbar = ({ level, handleSliderChange, changeFormat }) => {
+import "rc-slider/assets/index.css";
+import NavBarStyles from "../styles/NavBarStyles";
+
+const Navbar = ({ level, handleSliderChange, changeFormat, classes }) => {
   const [format, setFormat] = useState("hex");
   const [openSnackbar, setOpenSnackbar] = useState(false);
 
@@ -21,8 +23,8 @@ const Navbar = ({ level, handleSliderChange, changeFormat }) => {
   };
 
   return (
-    <header className="Navbar">
-      <div className="logo">
+    <header className={classes.navbar}>
+      <div className={classes.logo}>
         <Link to="/">
           <span style={{ color: "#eb3d30" }}>C</span>
           <span style={{ color: "#f69100" }}>O</span>
@@ -33,9 +35,9 @@ const Navbar = ({ level, handleSliderChange, changeFormat }) => {
         </Link>
       </div>
       {level && (
-        <div className="slider-container">
+        <div>
           <span>Level: {level}</span>
-          <div className="slider">
+          <div className={classes.slider}>
             <Slider
               defaultValue={level}
               min={100}
@@ -46,7 +48,7 @@ const Navbar = ({ level, handleSliderChange, changeFormat }) => {
           </div>
         </div>
       )}
-      <div className="select-container">
+      <div className={classes.selectContainer}>
         <Select value={format} onChange={handleFormatChange}>
           <MenuItem value="hex">HEX - #ffffff</MenuItem>
           <MenuItem value="rgb">RGB - rgb(255,255,255)</MenuItem>
@@ -79,4 +81,4 @@ const Navbar = ({ level, handleSliderChange, changeFormat }) => {
   );
 };
 
-export default Navbar;
+export default withStyles(NavBarStyles)(Navbar);

@@ -1,0 +1,44 @@
+const PaletteStyles = {
+  palette: {
+    height: "100vh",
+    display: "flex",
+    flexDirection: "column",
+    overflow: "hidden",
+  },
+  paletteColors: {
+    height: "90%",
+    display: "flex",
+    alignItems: "flex-start",
+    flexWrap: "wrap",
+  },
+  goBack: {
+    width: "20%",
+    height: "50%",
+    margin: "0",
+    padding: "0",
+    display: "inline-block",
+    position: "relative",
+    cursor: "pointer",
+    marginBottom: "-4px",
+    backgroundColor: "black",
+    opacity: "1",
+  },
+  goBackText: {
+    width: "100px",
+    position: "absolute",
+    display: "inline-block",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    textAlign: "center",
+    border: "none",
+    background: "rgba(255, 255, 255, 0.4)",
+    fontSize: "1rem",
+    padding: "7px",
+    textTransform: "uppercase",
+    textDecoration: "none",
+    color: "white",
+  },
+};
+
+export default PaletteStyles;
