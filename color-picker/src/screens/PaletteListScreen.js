@@ -1,6 +1,6 @@
 import React from "react";
 import { withStyles } from "@material-ui/styles";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import MiniPalette from "../components/MiniPalette";
 import paletteListStyles from "../styles/paletteListStyles";
 
@@ -14,6 +14,7 @@ const PaletteListScreen = ({ palettes, classes }) => {
       <div className={classes.container}>
         <nav className={classes.nav}>
           <h1>React Colors</h1>
+          <Link to="/palette/new">Create Palette</Link>
         </nav>
         <div className={classes.palettes}>
           {palettes.map((palette) => (

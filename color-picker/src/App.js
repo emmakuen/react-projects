@@ -3,6 +3,7 @@ import PaletteScreen from "./screens/PaletteScreen";
 import PaletteListScreen from "./screens/PaletteListScreen";
 import SingleColorPaletteScreen from "./screens/SingleColorPaletteScreen";
 import NotFoundScreen from "./screens/NotFoundScreen";
+import NewPaletteScreen from "./screens/NewPaletteScreen";
 import seedPalettes from "./utils/seedPalettes";
 import "./styles/App.css";
 
@@ -11,6 +12,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="*" element={<NotFoundScreen />} />
+        <Route path="/palette/new" element={<NewPaletteScreen />} />
         <Route
           path="/"
           element={<PaletteListScreen palettes={seedPalettes} />}
