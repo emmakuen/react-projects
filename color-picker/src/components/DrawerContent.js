@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { ValidatorForm, TextValidator } from "react-material-ui-form-validator";
 import Drawer from "@mui/material/Drawer";
 import DrawerHeader from "../components/DrawerHeader";
 import IconButton from "@mui/material/IconButton";
@@ -15,7 +16,27 @@ const DrawerContent = ({
   currentColor,
   updateCurrentColor,
   addColor,
+  colorName,
+  setColorName,
+  colors,
 }) => {
+  const handleChange = (e) => {
+    setColorName(e.target.value);
+  };
+
+  useEffect(() => {
+    ValidatorForm.addValidationRule("isColorNameUnique", (value) => {
+      const isNameUnique = (color) =>
+        color.name.toLowerCase() !== value.toLowerCase();
+      return colors.every(isNameUnique);
+    });
+
+    ValidatorForm.addValidationRule("isColorUnique", () => {
+      const isColorUnique = (color) => color.color !== currentColor;
+      return colors.every(isColorUnique);
+    });
+  }, [colors, currentColor]);
+
   return (
     <Drawer
       sx={{
@@ -58,15 +79,27 @@ const DrawerContent = ({
           color={currentColor}
           onChangeComplete={updateCurrentColor}
         />
-        <Button
-          variant="contained"
-          color="primary"
-          style={{ backgroundColor: currentColor }}
-          onClick={addColor}
-          size="large"
-        >
-          Add Color
-        </Button>
+        <ValidatorForm onSubmit={addColor}>
+          <TextValidator
+            value={colorName}
+            onChange={handleChange}
+            validators={["required", "isColorNameUnique", "isColorUnique"]}
+            errorMessages={[
+              "Enter a color name",
+              "Color name must be unique",
+              "Color must be unique",
+            ]}
+          />
+          <Button
+            variant="contained"
+            color="primary"
+            style={{ backgroundColor: currentColor }}
+            type="submit"
+            size="large"
+          >
+            Add Color
+          </Button>
+        </ValidatorForm>
       </div>
     </Drawer>
   );

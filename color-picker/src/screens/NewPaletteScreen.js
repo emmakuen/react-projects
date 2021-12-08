@@ -10,30 +10,29 @@ const NewPaletteScreen = () => {
   //   const theme = useTheme();
   const [open, setOpen] = useState(false);
   const [currentColor, setCurrentColor] = useState("teal");
-  const [colors, setColors] = useState(["#f44336", "#00bcd4"]);
+  const [colors, setColors] = useState([]);
+  const [colorName, setColorName] = useState("");
 
-  const handleDrawerOpen = () => {
-    setOpen(true);
-  };
-
-  const handleDrawerClose = () => {
-    setOpen(false);
-  };
+  const handleDrawerOpen = () => setOpen(true);
+  const handleDrawerClose = () => setOpen(false);
+  const updateCurrentColor = (newColor) => setCurrentColor(newColor.hex);
+  const clearPalette = () => setColors([]);
 
   const addColor = () => {
-    setColors([...colors, currentColor]);
+    const newColor = {
+      color: currentColor,
+      name: colorName,
+    };
+    setColors([...colors, newColor]);
+    setColorName("");
   };
 
   const removeColor = (colorToRemove) => {
-    let filteredColors = colors.filter((color) => color !== colorToRemove);
+    const filteredColors = colors.filter(
+      (color) => color.color !== colorToRemove
+    );
     setColors(filteredColors);
   };
-
-  const clearPalette = () => {
-    setColors([]);
-  };
-
-  const updateCurrentColor = (newColor) => setCurrentColor(newColor.hex);
 
   return (
     <Box sx={{ display: "flex" }}>
@@ -51,6 +50,9 @@ const NewPaletteScreen = () => {
         currentColor={currentColor}
         updateCurrentColor={updateCurrentColor}
         addColor={addColor}
+        colorName={colorName}
+        setColorName={setColorName}
+        colors={colors}
       />
       <DrawerMainContent
         open={open}

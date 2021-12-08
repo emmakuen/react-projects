@@ -2,7 +2,7 @@ import React from "react";
 import { withStyles } from "@material-ui/styles";
 import DraggableColorBoxStyles from "../styles/DraggableColorBoxStyles";
 
-const DraggableColorBox = ({ color, removeColor, classes }) => {
+const DraggableColorBox = ({ color, name, removeColor, classes }) => {
   const handleClick = () => {
     removeColor(color);
   };
@@ -13,7 +13,7 @@ const DraggableColorBox = ({ color, removeColor, classes }) => {
       className={classes.root}
       onClick={handleClick}
     >
-      <h1>{color}</h1>
+      <p>{name}</p>
     </div>
   );
 };

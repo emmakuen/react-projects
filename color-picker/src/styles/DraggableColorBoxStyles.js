@@ -8,7 +8,6 @@ const DraggableColorBoxStyles = {
     position: "relative",
     cursor: "pointer",
     marginBottom: "-4px",
-    border: "1px #909597 solid",
   },
 };
 
