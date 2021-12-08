@@ -11,6 +11,8 @@ import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Button } from "@mui/material";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
+
+import DraggableColorBox from "../components/DraggableColorBox";
 const drawerWidth = 400;
 
 const NewPaletteScreen = () => {
@@ -72,13 +74,17 @@ const NewPaletteScreen = () => {
     setOpen(false);
   };
 
-  const addNewColor = () => {
+  const addColor = () => {
     setColors([...colors, currentColor]);
   };
 
   const removeColor = (colorToRemove) => {
     let filteredColors = colors.filter((color) => color !== colorToRemove);
     setColors(filteredColors);
+  };
+
+  const clearPalette = () => {
+    setColors([]);
   };
 
   const updateCurrentColor = (newColor) => setCurrentColor(newColor.hex);
@@ -130,6 +136,7 @@ const NewPaletteScreen = () => {
             variant="contained"
             size="small"
             style={{ backgroundColor: "#e39a9d" }}
+            onClick={clearPalette}
           >
             Clear Palette
           </Button>
@@ -149,23 +156,23 @@ const NewPaletteScreen = () => {
           variant="contained"
           color="primary"
           style={{ backgroundColor: currentColor }}
-          onClick={addNewColor}
+          onClick={addColor}
         >
           Add Color
         </Button>
       </Drawer>
       <Main open={open}>
         <DrawerHeader />
-        <ul>
+        <div
+          style={{
+            height: "calc(100vh - 53px)",
+            margin: "-24px",
+          }}
+        >
           {colors.map((color) => (
-            <li
-              style={{ backgroundColor: color }}
-              onClick={() => removeColor(color)}
-            >
-              {color}
-            </li>
+            <DraggableColorBox color={color} removeColor={removeColor} />
           ))}
-        </ul>
+        </div>
       </Main>
     </Box>
   );
