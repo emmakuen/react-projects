@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { ChromePicker } from "react-color";
 import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
@@ -60,7 +60,9 @@ const NewPaletteScreen = () => {
   }));
 
   //   const theme = useTheme();
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
+  const [currentColor, setCurrentColor] = useState("teal");
+  const [colors, setColors] = useState(["#f44336", "#00bcd4"]);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -70,10 +72,25 @@ const NewPaletteScreen = () => {
     setOpen(false);
   };
 
+  const addNewColor = () => {
+    setColors([...colors, currentColor]);
+  };
+
+  const removeColor = (colorToRemove) => {
+    let filteredColors = colors.filter((color) => color !== colorToRemove);
+    setColors(filteredColors);
+  };
+
+  const updateCurrentColor = (newColor) => setCurrentColor(newColor.hex);
+
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
-      <AppBar position="fixed" open={open}>
+      <AppBar
+        position="fixed"
+        open={open}
+        style={{ backgroundColor: "#e39a9d", color: "white" }}
+      >
         <Toolbar>
           <IconButton
             color="inherit"
@@ -109,23 +126,46 @@ const NewPaletteScreen = () => {
         </DrawerHeader>
         <Typography variant="h4">Design Your Palette</Typography>
         <div>
-          <Button variant="contained" color="secondary" size="small">
+          <Button
+            variant="contained"
+            size="small"
+            style={{ backgroundColor: "#e39a9d" }}
+          >
             Clear Palette
           </Button>
-          <Button variant="contained" color="primary" size="small">
+          <Button
+            variant="contained"
+            size="small"
+            style={{ backgroundColor: "#00cec9" }}
+          >
             Random Color
           </Button>
         </div>
         <ChromePicker
-          color="teal"
-          onChangeComplete={(newColor) => console.log(newColor)}
+          color={currentColor}
+          onChangeComplete={updateCurrentColor}
         />
-        <Button variant="contained" color="primary">
+        <Button
+          variant="contained"
+          color="primary"
+          style={{ backgroundColor: currentColor }}
+          onClick={addNewColor}
+        >
           Add Color
         </Button>
       </Drawer>
       <Main open={open}>
         <DrawerHeader />
+        <ul>
+          {colors.map((color) => (
+            <li
+              style={{ backgroundColor: color }}
+              onClick={() => removeColor(color)}
+            >
+              {color}
+            </li>
+          ))}
+        </ul>
       </Main>
     </Box>
   );
