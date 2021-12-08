@@ -71,6 +71,7 @@ const ColorBoxStyles = {
     height: "100%",
     transform: "scale(0)",
     transition: "transform 0.6s ease-in-out",
+    textAlign: "center",
   },
   showOverlay: {
     opacity: "1",
@@ -80,6 +81,7 @@ const ColorBoxStyles = {
   },
 
   copyMessage: {
+    textAlign: "center",
     position: "fixed",
     bottom: "0",
     left: "0",

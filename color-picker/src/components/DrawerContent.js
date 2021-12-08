@@ -83,6 +83,7 @@ const DrawerContent = ({
           <TextValidator
             value={colorName}
             onChange={handleChange}
+            autoComplete="off"
             validators={["required", "isColorNameUnique", "isColorUnique"]}
             errorMessages={[
               "Enter a color name",

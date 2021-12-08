@@ -5,14 +5,13 @@ const MiniPaletteStyles = {
     borderRadius: "5px",
     padding: "0.5rem",
     positiion: "relative",
-    overflow: "hidden",
     "&:hover": {
       cursor: "pointer",
     },
   },
   colors: {
     backgroundColor: "#dae1e4",
-    height: "130px",
+    height: "120px",
     width: "100%",
     display: "flex",
     flexWrap: "wrap",
@@ -27,7 +26,6 @@ const MiniPaletteStyles = {
     margin: "0",
     color: "#000",
     paddingTop: "0.5rem",
-    paddingBottom: "1rem",
     fontSize: "1rem",
     position: "relative",
   },

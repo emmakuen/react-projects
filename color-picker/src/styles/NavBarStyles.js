@@ -9,7 +9,7 @@ const NavBarStyles = {
   logo: {
     marginRight: "1rem",
     padding: "0 13px",
-    paddingTop: "3vh",
+    paddingTop: "1.6vh",
     backgroundColor: "#d6efff",
     height: "100%",
     "& a": {

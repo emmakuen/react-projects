@@ -1,10 +1,13 @@
 const PaletteListStyles = {
   root: {
     backgroundColor: "#e39a9d",
-    height: "100vh",
+    minHeight: "100vh",
+    height: "100%",
     display: "flex",
     justifyContent: "center",
     alignItems: "flex-start",
+    overflow: "scroll",
+    paddingBottom: "10rem",
   },
   container: {
     width: "50%",
@@ -19,6 +22,8 @@ const PaletteListStyles = {
     justifyContent: "space-between",
     color: "#fff",
     alignItems: "center",
+    paddingTop: "1rem",
+    paddingBottom: "1rem",
     "& a": {
       textDecoration: "none",
       color: "white",
@@ -35,8 +40,8 @@ const PaletteListStyles = {
     boxSizing: "border-box",
     width: "100%",
     display: "grid",
-    gridTemplateColumns: "repeat(3, 30%)",
     gridGap: "5%",
+    gridTemplateColumns: `repeat(3, 30%)`,
   },
 };
 

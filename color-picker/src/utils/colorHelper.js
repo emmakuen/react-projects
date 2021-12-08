@@ -69,8 +69,8 @@ const generateScale = (hexColor, numberOfColors) => {
   return chroma.scale(getRange(hexColor)).mode("lab").colors(numberOfColors);
 };
 
-const findPalette = (seedColors, id) => {
-  return seedColors.find((palette) => palette.id === id);
+const findPalette = (seedPalettes, id) => {
+  return seedPalettes.find((palette) => palette.id === id);
 };
 
 const findColor = (seedPalette, name) => {

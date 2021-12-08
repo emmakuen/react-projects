@@ -6,7 +6,7 @@ import DrawerContent from "../components/DrawerContent";
 import DrawerMainContent from "../components/DrawerMainContent";
 const drawerWidth = 400;
 
-const NewPaletteScreen = () => {
+const NewPaletteScreen = ({ palettes, setPalettes }) => {
   //   const theme = useTheme();
   const [open, setOpen] = useState(false);
   const [currentColor, setCurrentColor] = useState("teal");
@@ -41,6 +41,9 @@ const NewPaletteScreen = () => {
         open={open}
         handleDrawerOpen={handleDrawerOpen}
         drawerWidth={drawerWidth}
+        colors={colors}
+        palettes={palettes}
+        setPalettes={setPalettes}
       />
       <DrawerContent
         open={open}
