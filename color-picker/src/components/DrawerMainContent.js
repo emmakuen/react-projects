@@ -15,7 +15,7 @@ const DrawerMainContent = ({ drawerWidth, open, removeColor, colors }) => {
       >
         {colors.map((color) => (
           <DraggableColorBox
-            key={color}
+            key={color.color}
             color={color.color}
             name={color.name}
             removeColor={removeColor}

@@ -56,6 +56,7 @@ const ColorBoxStyles = {
 
   boxContent: {
     position: "absolute",
+    width: "100%",
     padding: "10px",
     left: "0",
     bottom: "0",

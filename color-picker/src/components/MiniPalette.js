@@ -14,12 +14,11 @@ const MiniPalette = ({
     <div
       className={classes.miniColorBox}
       style={{ backgroundColor: color.color }}
-      key={color.hex}
+      key={color.name}
     />
   ));
 
   const handleClick = () => {
-    console.log(id);
     goToPalette(id);
   };
 
