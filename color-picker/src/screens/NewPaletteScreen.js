@@ -11,6 +11,7 @@ const NewPaletteScreen = ({ palettes, setPalettes }) => {
   const [open, setOpen] = useState(false);
   const [currentColor, setCurrentColor] = useState("teal");
   const [colors, setColors] = useState([]);
+  const [paletteName, setPaletteName] = useState("");
   const [colorName, setColorName] = useState("");
 
   const handleDrawerOpen = () => setOpen(true);
@@ -44,6 +45,8 @@ const NewPaletteScreen = ({ palettes, setPalettes }) => {
         colors={colors}
         palettes={palettes}
         setPalettes={setPalettes}
+        paletteName={paletteName}
+        setPaletteName={setPaletteName}
       />
       <DrawerContent
         open={open}

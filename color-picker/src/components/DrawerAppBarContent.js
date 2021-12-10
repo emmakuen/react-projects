@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { ValidatorForm, TextValidator } from "react-material-ui-form-validator";
 import { useNavigate } from "react-router-dom";
 import DrawerAppBar from "../components/DrawerAppBar";
 import Toolbar from "@mui/material/Toolbar";
@@ -14,19 +15,32 @@ const DrawerAppBarContent = ({
   colors,
   palettes,
   setPalettes,
+  paletteName,
+  setPaletteName,
 }) => {
+  useEffect(() => {
+    ValidatorForm.addValidationRule("paletteNameUnique", (value) =>
+      palettes.every(
+        (palette) => palette.paletteName.toLowerCase() !== value.toLowerCase()
+      )
+    );
+  }, [palettes]);
+
   let navigate = useNavigate();
+
   const handleSubmit = () => {
-    let newPaletteName = "Test Palette";
     const newPalette = {
-      paletteName: newPaletteName,
-      id: newPaletteName.toLowerCase().replace(/ /g, "-"),
+      paletteName: paletteName,
+      id: paletteName.toLowerCase().replace(/ /g, "-"),
       colors: colors,
       emoji: "",
     };
     setPalettes([...palettes, newPalette]);
     navigate("/");
   };
+
+  const handleNameChange = (e) => setPaletteName(e.target.value);
+
   return (
     <div>
       <DrawerAppBar
@@ -48,14 +62,25 @@ const DrawerAppBarContent = ({
           <Typography variant="h6" noWrap component="div">
             Persistent drawer
           </Typography>
-          <Button
-            variant="contained"
-            size="small"
-            style={{ backgroundColor: "#ffb69e", color: "#616565" }}
-            onClick={handleSubmit}
-          >
-            Save Palette
-          </Button>
+          <ValidatorForm onSubmit={handleSubmit}>
+            <TextValidator
+              label="Palette Name"
+              value={paletteName}
+              onChange={handleNameChange}
+              name="paletteName"
+              validators={["required", "paletteNameUnique"]}
+              errorMessages={["Enter Palette Name", "Name Already Taken"]}
+            />
+
+            <Button
+              variant="contained"
+              size="small"
+              style={{ backgroundColor: "#ffb69e", color: "#616565" }}
+              type="submit"
+            >
+              Save Palette
+            </Button>
+          </ValidatorForm>
         </Toolbar>
       </DrawerAppBar>
     </div>

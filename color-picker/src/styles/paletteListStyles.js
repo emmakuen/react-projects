@@ -2,15 +2,14 @@ const PaletteListStyles = {
   root: {
     backgroundColor: "#e39a9d",
     minHeight: "100vh",
-    height: "100%",
     display: "flex",
     justifyContent: "center",
     alignItems: "flex-start",
-    overflow: "scroll",
     paddingBottom: "10rem",
   },
   container: {
     width: "50%",
+    height: "100%",
     display: "flex",
     alignItems: "flex-start",
     flexDirection: "column",

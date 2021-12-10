@@ -6,7 +6,6 @@ import SingleColorPaletteScreen from "./screens/SingleColorPaletteScreen";
 import NotFoundScreen from "./screens/NotFoundScreen";
 import NewPaletteScreen from "./screens/NewPaletteScreen";
 import seedPalettes from "./utils/seedPalettes";
-import "./styles/App.css";
 
 function App() {
   const [palettes, setPalettes] = useState(seedPalettes);
