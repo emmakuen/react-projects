@@ -1,9 +1,15 @@
 import React from "react";
-import DraggableColorBox from "../components/DraggableColorBox";
 import DrawerMain from "../components/DrawerMain";
 import DrawerHeader from "../components/DrawerHeader";
+import DraggableColorList from "./DraggableColorList";
 
-const DrawerMainContent = ({ drawerWidth, open, removeColor, colors }) => {
+const DrawerMainContent = ({
+  drawerWidth,
+  open,
+  removeColor,
+  colors,
+  onSortEnd,
+}) => {
   return (
     <DrawerMain drawerWidth={drawerWidth} open={open}>
       <DrawerHeader />
@@ -13,14 +19,12 @@ const DrawerMainContent = ({ drawerWidth, open, removeColor, colors }) => {
           margin: "-24px",
         }}
       >
-        {colors.map((color) => (
-          <DraggableColorBox
-            key={color.color}
-            color={color.color}
-            name={color.name}
-            removeColor={removeColor}
-          />
-        ))}
+        <DraggableColorList
+          colors={colors}
+          removeColor={removeColor}
+          axis="xy"
+          onSortEnd={onSortEnd}
+        />
       </div>
     </DrawerMain>
   );

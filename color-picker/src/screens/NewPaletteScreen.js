@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { arrayMove } from "react-sortable-hoc";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
 import DrawerAppBarContent from "../components/DrawerAppBarContent";
 import DrawerContent from "../components/DrawerContent";
 import DrawerMainContent from "../components/DrawerMainContent";
+
 const drawerWidth = 400;
 
 const NewPaletteScreen = ({ palettes, setPalettes }) => {
@@ -33,6 +35,10 @@ const NewPaletteScreen = ({ palettes, setPalettes }) => {
       (color) => color.color !== colorToRemove
     );
     setColors(filteredColors);
+  };
+
+  const onSortEnd = ({ oldIndex, newIndex }) => {
+    setColors((colors) => arrayMove(colors, oldIndex, newIndex));
   };
 
   return (
@@ -65,6 +71,7 @@ const NewPaletteScreen = ({ palettes, setPalettes }) => {
         drawerWidth={drawerWidth}
         removeColor={removeColor}
         colors={colors}
+        onSortEnd={onSortEnd}
       />
     </Box>
   );

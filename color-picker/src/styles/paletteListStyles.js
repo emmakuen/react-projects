@@ -1,18 +1,17 @@
 const PaletteListStyles = {
   root: {
     backgroundColor: "#e39a9d",
-    minHeight: "100vh",
+    height: "100vh",
     display: "flex",
     justifyContent: "center",
     alignItems: "flex-start",
-    paddingBottom: "10rem",
+    overflowY: "scroll",
   },
   container: {
     width: "50%",
     height: "100%",
     display: "flex",
     alignItems: "flex-start",
-    flexDirection: "column",
     flexWrap: "wrap",
   },
   nav: {
@@ -39,7 +38,7 @@ const PaletteListStyles = {
     boxSizing: "border-box",
     width: "100%",
     display: "grid",
-    gridGap: "5%",
+    gridGap: "2.5rem",
     gridTemplateColumns: `repeat(3, 30%)`,
   },
 };
