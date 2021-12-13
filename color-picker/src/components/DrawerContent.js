@@ -1,12 +1,14 @@
-import React, { useEffect } from "react";
-import { ValidatorForm, TextValidator } from "react-material-ui-form-validator";
+import React from "react";
 import Drawer from "@mui/material/Drawer";
 import DrawerHeader from "../components/DrawerHeader";
 import IconButton from "@mui/material/IconButton";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import Typography from "@mui/material/Typography";
 import { Button } from "@mui/material";
-import { ChromePicker } from "react-color";
+import ColorPickerForm from "../components/ColorPickerForm";
+
+import { withStyles } from "@material-ui/styles";
+import DrawerStyles from "../styles/DrawerStyles";
 
 const MAX_COLORS = 20;
 
@@ -22,25 +24,9 @@ const DrawerContent = ({
   setColorName,
   colors,
   addRandomColor,
+  classes,
 }) => {
-  const handleChange = (e) => {
-    setColorName(e.target.value);
-  };
-
   const paletteFull = colors.length >= MAX_COLORS;
-
-  useEffect(() => {
-    ValidatorForm.addValidationRule("isColorNameUnique", (value) => {
-      const isNameUnique = (color) =>
-        color.name.toLowerCase() !== value.toLowerCase();
-      return colors.every(isNameUnique);
-    });
-
-    ValidatorForm.addValidationRule("isColorUnique", () => {
-      const isColorUnique = (color) => color.color !== currentColor;
-      return colors.every(isColorUnique);
-    });
-  }, [colors, currentColor]);
 
   return (
     <Drawer
@@ -61,9 +47,9 @@ const DrawerContent = ({
           <ChevronLeftIcon />
         </IconButton>
       </DrawerHeader>
-      <div>
+      <div className={classes.container}>
         <Typography variant="h4">Design Your Palette</Typography>
-        <div>
+        <div className={classes.buttonContainer}>
           <Button
             variant="contained"
             size="small"
@@ -85,36 +71,18 @@ const DrawerContent = ({
             {paletteFull ? "Palette Full" : "Random Color"}
           </Button>
         </div>
-        <ChromePicker
-          color={currentColor}
-          onChangeComplete={updateCurrentColor}
+        <ColorPickerForm
+          colors={colors}
+          addColor={addColor}
+          colorName={colorName}
+          setColorName={setColorName}
+          currentColor={currentColor}
+          updateCurrentColor={updateCurrentColor}
+          paletteFull={paletteFull}
         />
-        <ValidatorForm onSubmit={addColor}>
-          <TextValidator
-            value={colorName}
-            onChange={handleChange}
-            autoComplete="off"
-            validators={["required", "isColorNameUnique", "isColorUnique"]}
-            errorMessages={[
-              "Enter a color name",
-              "Color name must be unique",
-              "Color must be unique",
-            ]}
-          />
-          <Button
-            variant="contained"
-            color="primary"
-            style={{ backgroundColor: paletteFull ? "#dbdbdb" : currentColor }}
-            type="submit"
-            size="large"
-            disabled={paletteFull}
-          >
-            {paletteFull ? "Palette Full" : "Add Color"}
-          </Button>
-        </ValidatorForm>
       </div>
     </Drawer>
   );
 };
 
-export default DrawerContent;
+export default withStyles(DrawerStyles)(DrawerContent);
