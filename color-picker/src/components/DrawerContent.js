@@ -8,6 +8,8 @@ import Typography from "@mui/material/Typography";
 import { Button } from "@mui/material";
 import { ChromePicker } from "react-color";
 
+const MAX_COLORS = 20;
+
 const DrawerContent = ({
   open,
   drawerWidth,
@@ -19,10 +21,13 @@ const DrawerContent = ({
   colorName,
   setColorName,
   colors,
+  addRandomColor,
 }) => {
   const handleChange = (e) => {
     setColorName(e.target.value);
   };
+
+  const paletteFull = colors.length >= MAX_COLORS;
 
   useEffect(() => {
     ValidatorForm.addValidationRule("isColorNameUnique", (value) => {
@@ -70,9 +75,14 @@ const DrawerContent = ({
           <Button
             variant="contained"
             size="small"
-            style={{ backgroundColor: "#00cec9" }}
+            style={{
+              backgroundColor:
+                colors.length < MAX_COLORS ? "#00cec9" : "#dbdbdb",
+            }}
+            disabled={paletteFull}
+            onClick={addRandomColor}
           >
-            Random Color
+            {paletteFull ? "Palette Full" : "Random Color"}
           </Button>
         </div>
         <ChromePicker
@@ -94,11 +104,12 @@ const DrawerContent = ({
           <Button
             variant="contained"
             color="primary"
-            style={{ backgroundColor: currentColor }}
+            style={{ backgroundColor: paletteFull ? "#dbdbdb" : currentColor }}
             type="submit"
             size="large"
+            disabled={paletteFull}
           >
-            Add Color
+            {paletteFull ? "Palette Full" : "Add Color"}
           </Button>
         </ValidatorForm>
       </div>

@@ -85,10 +85,18 @@ const formatLightColor = (props) => {
     : "rgba(255, 255, 255, 0.8)";
 };
 
+const generateRandomColor = (seedPalettes) => {
+  const allColors = seedPalettes.map((palette) => palette.colors).flat();
+  const randomIndex = Math.floor(Math.random() * allColors.length);
+  const randomColor = allColors[randomIndex];
+  return randomColor;
+};
+
 export {
   generatePalette,
   findPalette,
   generateSingleColorPalette,
   findColor,
   formatLightColor,
+  generateRandomColor,
 };

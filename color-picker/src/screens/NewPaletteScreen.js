@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { arrayMove } from "react-sortable-hoc";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
+
+import { generateRandomColor } from "../utils/colorHelper";
 import DrawerAppBarContent from "../components/DrawerAppBarContent";
 import DrawerContent from "../components/DrawerContent";
 import DrawerMainContent from "../components/DrawerMainContent";
@@ -12,7 +14,7 @@ const NewPaletteScreen = ({ palettes, setPalettes }) => {
   //   const theme = useTheme();
   const [open, setOpen] = useState(false);
   const [currentColor, setCurrentColor] = useState("teal");
-  const [colors, setColors] = useState([]);
+  const [colors, setColors] = useState(palettes[0].colors);
   const [paletteName, setPaletteName] = useState("");
   const [colorName, setColorName] = useState("");
 
@@ -41,6 +43,14 @@ const NewPaletteScreen = ({ palettes, setPalettes }) => {
     setColors((colors) => arrayMove(colors, oldIndex, newIndex));
   };
 
+  const addRandomColor = () => {
+    let randomColor = generateRandomColor(palettes);
+    while (colors.includes(randomColor) && colors.length < 20) {
+      randomColor = generateRandomColor(palettes);
+    }
+    setColors([...colors, randomColor]);
+  };
+
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
@@ -65,6 +75,7 @@ const NewPaletteScreen = ({ palettes, setPalettes }) => {
         colorName={colorName}
         setColorName={setColorName}
         colors={colors}
+        addRandomColor={addRandomColor}
       />
       <DrawerMainContent
         open={open}
