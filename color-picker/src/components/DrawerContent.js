@@ -48,13 +48,16 @@ const DrawerContent = ({
         </IconButton>
       </DrawerHeader>
       <div className={classes.container}>
-        <Typography variant="h4">Design Your Palette</Typography>
+        <Typography variant="h4" color="#e39a9d" fontWeight="bold">
+          Design Your Palette
+        </Typography>
         <div className={classes.buttonContainer}>
           <Button
             variant="contained"
             size="small"
             style={{ backgroundColor: "#e39a9d" }}
             onClick={clearPalette}
+            className={classes.button}
           >
             Clear Palette
           </Button>
@@ -67,6 +70,7 @@ const DrawerContent = ({
             }}
             disabled={paletteFull}
             onClick={addRandomColor}
+            className={classes.button}
           >
             {paletteFull ? "Palette Full" : "Random Color"}
           </Button>

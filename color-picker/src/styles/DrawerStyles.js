@@ -1,12 +1,21 @@
 const DrawerStyles = {
   container: {
-    width: "90%",
+    width: "100%",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
-    alignItems: "center",
+    alignItems: "start",
+    padding: "0 10%",
   },
-  buttonContainer: {},
+  buttonContainer: {
+    display: "flex",
+    width: "100%",
+    justifyContent: "space-between",
+    marginTop: "2rem",
+  },
+  button: {
+    width: "47%",
+  },
 };
 
 export default DrawerStyles;

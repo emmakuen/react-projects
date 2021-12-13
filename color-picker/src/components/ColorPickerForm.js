@@ -4,6 +4,9 @@ import { ChromePicker } from "react-color";
 
 import { Button } from "@mui/material";
 
+import { withStyles } from "@material-ui/styles";
+import ColorPickerFormStyles from "../styles/ColorPickerFormStyles";
+
 const ColorPickerForm = ({
   currentColor,
   updateCurrentColor,
@@ -32,15 +35,20 @@ const ColorPickerForm = ({
   }, [colors, currentColor]);
 
   return (
-    <div>
+    <div className={classes.root}>
       <ChromePicker
         color={currentColor}
         onChangeComplete={updateCurrentColor}
+        className={classes.picker}
       />
 
       <ValidatorForm onSubmit={addColor}>
         <TextValidator
+          className={classes.colorNameInput}
+          placeholder="Color Name"
           value={colorName}
+          variant="filled"
+          margin="normal"
           onChange={handleChange}
           autoComplete="off"
           validators={["required", "isColorNameUnique", "isColorUnique"]}
@@ -53,10 +61,10 @@ const ColorPickerForm = ({
         <Button
           variant="contained"
           color="primary"
-          style={{ backgroundColor: paletteFull ? "#dbdbdb" : currentColor }}
           type="submit"
           size="large"
           disabled={paletteFull}
+          className={classes.addButton}
         >
           {paletteFull ? "Palette Full" : "Add Color"}
         </Button>
@@ -65,4 +73,4 @@ const ColorPickerForm = ({
   );
 };
 
-export default ColorPickerForm;
+export default withStyles(ColorPickerFormStyles)(ColorPickerForm);
