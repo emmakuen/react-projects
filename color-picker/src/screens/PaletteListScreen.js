@@ -4,11 +4,18 @@ import { useNavigate, Link } from "react-router-dom";
 import MiniPalette from "../components/MiniPalette";
 import PaletteListStyles from "../styles/PaletteListStyles";
 
-const PaletteListScreen = ({ palettes, classes }) => {
+const PaletteListScreen = ({ palettes, setPalettes, classes }) => {
   let navigate = useNavigate();
   const goToPalette = (id) => {
     navigate(`/palette/${id}`);
   };
+
+  const deletePalette = (e, id) => {
+    e.stopPropagation();
+    const updatedPalettes = palettes.filter((palette) => palette.id !== id);
+    setPalettes(updatedPalettes);
+  };
+
   return (
     <div className={classes.root}>
       <div className={classes.container}>
@@ -22,6 +29,7 @@ const PaletteListScreen = ({ palettes, classes }) => {
               {...palette}
               key={palette.id}
               goToPalette={goToPalette}
+              deletePalette={deletePalette}
             />
           ))}
         </div>

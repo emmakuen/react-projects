@@ -8,7 +8,7 @@ const PaletteListStyles = {
     overflowY: "scroll",
   },
   container: {
-    width: "50%",
+    maxWidth: "800px",
     height: "100%",
     display: "flex",
     alignItems: "flex-start",
@@ -17,6 +17,7 @@ const PaletteListStyles = {
   nav: {
     display: "flex",
     width: "100%",
+    boxSizing: "border-box",
     justifyContent: "space-between",
     color: "#fff",
     alignItems: "center",
@@ -40,7 +41,6 @@ const PaletteListStyles = {
     display: "grid",
     gridGap: "2.5rem",
     gridTemplateColumns: `repeat(3, 30%)`,
-    boxStyle: "border-box",
     paddingBottom: "3rem",
   },
 };

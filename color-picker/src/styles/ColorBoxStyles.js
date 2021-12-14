@@ -12,7 +12,7 @@ const ColorBoxStyles = {
     marginBottom: "-4px",
     "&:hover button": {
       opacity: "1",
-      transition: "0.5s",
+      transition: "all 0.5s ease-in-out",
     },
   },
   copyText: {

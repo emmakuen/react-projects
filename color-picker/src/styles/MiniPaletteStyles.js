@@ -37,19 +37,25 @@ const MiniPaletteStyles = {
     margin: "0",
     marginBottom: "-3.5px",
   },
-  deleteContainer: {},
   deleteIcon: {
     position: "absolute",
     top: "0px",
     right: "0px",
     width: "40px !important",
-    height: "30px !important",
+    height: "35px !important",
     padding: "5px",
     zIndex: 10,
     color: "#fff",
     backgroundColor: "#ed4c67",
+    border: "1px solid white",
+    borderRadius: "5px",
     opacity: 0,
     transition: "all 0.3s ease-in-out !important",
+    "&:hover": {
+      backgroundColor: "#ff5157",
+      width: "45px !important",
+      height: "40px !important",
+    },
   },
 };
 
