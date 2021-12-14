@@ -17,6 +17,7 @@ const NewPaletteScreen = ({ palettes, setPalettes }) => {
   const [colors, setColors] = useState(palettes[0].colors);
   const [paletteName, setPaletteName] = useState("");
   const [colorName, setColorName] = useState("");
+  const [paletteEmoji, setPaletteEmoji] = useState("");
 
   const handleDrawerOpen = () => setOpen(true);
   const handleDrawerClose = () => setOpen(false);
@@ -63,6 +64,8 @@ const NewPaletteScreen = ({ palettes, setPalettes }) => {
         setPalettes={setPalettes}
         paletteName={paletteName}
         setPaletteName={setPaletteName}
+        paletteEmoji={paletteEmoji}
+        setPaletteEmoji={setPaletteEmoji}
       />
       <DrawerContent
         open={open}

@@ -7,6 +7,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Typography from "@mui/material/Typography";
 import { Button } from "@mui/material";
 import PaletteSaveForm from "./PaletteSaveForm";
+import EmojiPicker from "./EmojiPicker";
 
 import { withStyles } from "@material-ui/styles";
 import DrawerAppBarStyles from "../styles/DrawerAppBarStyles";
@@ -20,6 +21,8 @@ const DrawerAppBarContent = ({
   setPalettes,
   paletteName,
   setPaletteName,
+  paletteEmoji,
+  setPaletteEmoji,
   classes,
 }) => {
   let navigate = useNavigate();
@@ -29,20 +32,31 @@ const DrawerAppBarContent = ({
       paletteName: paletteName,
       id: paletteName.toLowerCase().replace(/ /g, "-"),
       colors: colors,
-      emoji: "",
+      emoji: paletteEmoji,
     };
     setPalettes([...palettes, newPalette]);
+    setPaletteEmoji("");
+    setPaletteName("");
     navigate("/");
   };
 
-  const [openDialogue, setOpenDialogue] = useState(false);
+  const dialogueStages = ["emoji", "name"];
+  const [dialogueStage, setDialogueStage] = useState("");
 
   const handleClickOpen = () => {
-    setOpenDialogue(true);
+    setDialogueStage(dialogueStages[0]);
+  };
+
+  const onEmojiSelect = (e) => {
+    setPaletteEmoji(e.native);
+  };
+
+  const handleClickNext = () => {
+    setDialogueStage(dialogueStages[1]);
   };
 
   const handleClickClose = () => {
-    setOpenDialogue(false);
+    setDialogueStage("");
   };
 
   const handleNameChange = (e) => setPaletteName(e.target.value);
@@ -67,7 +81,7 @@ const DrawerAppBarContent = ({
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" noWrap component="div">
-              Create A Palette
+              Create a Palette
             </Typography>
           </Toolbar>
           <div className={classes.formContainer}>
@@ -82,13 +96,22 @@ const DrawerAppBarContent = ({
             >
               Save
             </Button>
+
+            <EmojiPicker
+              handleClickClose={handleClickClose}
+              dialogueStage={dialogueStage}
+              handleClickNext={handleClickNext}
+              paletteEmoji={paletteEmoji}
+              onEmojiSelect={onEmojiSelect}
+            />
+
             <PaletteSaveForm
               handleSubmit={handleSubmit}
               paletteName={paletteName}
               handleNameChange={handleNameChange}
               palettes={palettes}
               handleClickClose={handleClickClose}
-              open={openDialogue}
+              dialogueStage={dialogueStage}
             />
           </div>
         </div>

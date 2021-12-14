@@ -1,19 +1,24 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import Button from "@mui/material/Button";
 import { ValidatorForm, TextValidator } from "react-material-ui-form-validator";
+
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 
+import { withStyles } from "@material-ui/styles";
+import PaletteSaveFormStyles from "../styles/PaletteSaveFormStyles";
+
 const PaletteSaveForm = ({
   handleSubmit,
   paletteName,
   handleNameChange,
   palettes,
-  open,
+  dialogueStage,
   handleClickClose,
+  classes,
 }) => {
   useEffect(() => {
     ValidatorForm.addValidationRule("paletteNameUnique", (value) =>
@@ -25,8 +30,10 @@ const PaletteSaveForm = ({
 
   return (
     <div>
-      <Dialog open={open} onClose={handleClickClose}>
-        <DialogTitle>Choose a Palette Name</DialogTitle>
+      <Dialog open={dialogueStage === "name"} onClose={handleClickClose}>
+        <DialogTitle className={classes.title}>
+          Choose a Palette Name
+        </DialogTitle>
         <ValidatorForm onSubmit={handleSubmit}>
           <DialogContent>
             <DialogContentText>
@@ -45,8 +52,12 @@ const PaletteSaveForm = ({
             />
           </DialogContent>
           <DialogActions>
-            <Button onClick={handleClickClose}>Cancel</Button>
-            <Button type="submit">Save Palette</Button>
+            <Button onClick={handleClickClose} className={classes.cancelButton}>
+              Cancel
+            </Button>
+            <Button type="submit" className={classes.saveButton}>
+              Save Palette
+            </Button>
           </DialogActions>
         </ValidatorForm>
       </Dialog>
@@ -54,4 +65,4 @@ const PaletteSaveForm = ({
   );
 };
 
-export default PaletteSaveForm;
+export default withStyles(PaletteSaveFormStyles)(PaletteSaveForm);
