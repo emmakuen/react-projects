@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { ValidatorForm, TextValidator } from "react-material-ui-form-validator";
 import { useNavigate, Link } from "react-router-dom";
 import DrawerAppBar from "../components/DrawerAppBar";
 import Toolbar from "@mui/material/Toolbar";
@@ -7,6 +6,7 @@ import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import Typography from "@mui/material/Typography";
 import { Button } from "@mui/material";
+import PaletteSaveForm from "./PaletteSaveForm";
 
 import { withStyles } from "@material-ui/styles";
 import DrawerAppBarStyles from "../styles/DrawerAppBarStyles";
@@ -22,14 +22,6 @@ const DrawerAppBarContent = ({
   setPaletteName,
   classes,
 }) => {
-  useEffect(() => {
-    ValidatorForm.addValidationRule("paletteNameUnique", (value) =>
-      palettes.every(
-        (palette) => palette.paletteName.toLowerCase() !== value.toLowerCase()
-      )
-    );
-  }, [palettes]);
-
   let navigate = useNavigate();
 
   const handleSubmit = () => {
@@ -69,28 +61,15 @@ const DrawerAppBarContent = ({
             </Typography>
           </Toolbar>
           <div className={classes.formContainer}>
-            <ValidatorForm onSubmit={handleSubmit}>
-              <TextValidator
-                label="Palette Name"
-                value={paletteName}
-                onChange={handleNameChange}
-                name="paletteName"
-                validators={["required", "paletteNameUnique"]}
-                errorMessages={["Enter Palette Name", "Name Already Taken"]}
-              />
-
-              <Button
-                variant="contained"
-                size="small"
-                style={{ backgroundColor: "#ffb69e", color: "#616565" }}
-                type="submit"
-              >
-                Save Palette
-              </Button>
-            </ValidatorForm>
             <Link to="/" className={classes.goBackButton}>
               Go Back
             </Link>
+            <PaletteSaveForm
+              handleSubmit={handleSubmit}
+              paletteName={paletteName}
+              handleNameChange={handleNameChange}
+              palettes={palettes}
+            />
           </div>
         </div>
       </DrawerAppBar>
