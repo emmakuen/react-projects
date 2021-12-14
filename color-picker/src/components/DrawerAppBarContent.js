@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import DrawerAppBar from "../components/DrawerAppBar";
 import Toolbar from "@mui/material/Toolbar";
@@ -35,6 +35,16 @@ const DrawerAppBarContent = ({
     navigate("/");
   };
 
+  const [openDialogue, setOpenDialogue] = useState(false);
+
+  const handleClickOpen = () => {
+    setOpenDialogue(true);
+  };
+
+  const handleClickClose = () => {
+    setOpenDialogue(false);
+  };
+
   const handleNameChange = (e) => setPaletteName(e.target.value);
 
   return (
@@ -64,11 +74,21 @@ const DrawerAppBarContent = ({
             <Link to="/" className={classes.goBackButton}>
               Go Back
             </Link>
+            <Button
+              className={classes.saveButton}
+              variant="outlined"
+              size="small"
+              onClick={handleClickOpen}
+            >
+              Save
+            </Button>
             <PaletteSaveForm
               handleSubmit={handleSubmit}
               paletteName={paletteName}
               handleNameChange={handleNameChange}
               palettes={palettes}
+              handleClickClose={handleClickClose}
+              open={openDialogue}
             />
           </div>
         </div>
