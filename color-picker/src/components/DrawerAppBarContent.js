@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import DrawerAppBar from "../components/DrawerAppBar";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
+import AddBoxIcon from "@mui/icons-material/AddBox";
 import Typography from "@mui/material/Typography";
 import { Button } from "@mui/material";
 import PaletteSaveForm from "./PaletteSaveForm";
@@ -39,6 +39,10 @@ const DrawerAppBarContent = ({
     setPaletteName("");
     navigate("/");
   };
+
+  useEffect(() => {
+    window.localStorage.setItem("palettes", JSON.stringify(palettes));
+  }, [palettes]);
 
   const dialogueStages = ["emoji", "name"];
   const [dialogueStage, setDialogueStage] = useState("");
@@ -78,7 +82,7 @@ const DrawerAppBarContent = ({
               edge="start"
               sx={{ mr: 2, ...(open && { display: "none" }) }}
             >
-              <MenuIcon />
+              <AddBoxIcon />
             </IconButton>
             <Typography variant="h6" noWrap component="div">
               Create a Palette

@@ -40,6 +40,8 @@ const PaletteListStyles = {
     display: "grid",
     gridGap: "2.5rem",
     gridTemplateColumns: `repeat(3, 30%)`,
+    boxStyle: "border-box",
+    paddingBottom: "3rem",
   },
 };
 

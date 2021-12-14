@@ -8,7 +8,8 @@ import NewPaletteScreen from "./screens/NewPaletteScreen";
 import seedPalettes from "./utils/seedPalettes";
 
 function App() {
-  const [palettes, setPalettes] = useState(seedPalettes);
+  const savedPalettes = JSON.parse(window.localStorage.getItem("palettes"));
+  const [palettes, setPalettes] = useState(savedPalettes || seedPalettes);
   return (
     <div className="App">
       <Routes>
