@@ -1,4 +1,5 @@
 import { formatLightColor } from "../utils/colorHelper";
+import sizes from "./sizes";
 
 const ColorBoxStyles = {
   colorBox: {
@@ -13,6 +14,25 @@ const ColorBoxStyles = {
     "&:hover button": {
       opacity: "1",
       transition: "all 0.5s ease-in-out",
+    },
+    "@media (max-width: 900px)": {
+      width: "50%",
+    },
+
+    "@media (max-width: 500px)": {
+      width: "100%",
+    },
+    [sizes.down("lg")]: {
+      width: "25%",
+      height: (props) => (props.moreUrl ? "20%" : "33.3333%"),
+    },
+    [sizes.down("md")]: {
+      width: "50%",
+      height: (props) => (props.moreUrl ? "10%" : "20%"),
+    },
+    [sizes.down("xs")]: {
+      width: "100%",
+      height: (props) => (props.moreUrl ? "5%" : "10%"),
     },
   },
   copyText: {
@@ -104,6 +124,9 @@ const ColorBoxStyles = {
       width: "100%",
       marginBottom: "0",
       textTransform: "uppercase",
+      [sizes.down("xs")]: {
+        fontSize: "5rem",
+      },
     },
   },
   showCopyMessage: {
