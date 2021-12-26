@@ -1,3 +1,5 @@
+import sizes from "./sizes";
+
 const NavBarStyles = {
   navbar: {
     display: "flex",
@@ -10,7 +12,6 @@ const NavBarStyles = {
     marginRight: "1rem",
     padding: "0 13px",
     paddingTop: "1.6vh",
-    backgroundColor: "#d6efff",
     height: "100%",
     "& a": {
       textDecoration: "none",
@@ -45,10 +46,21 @@ const NavBarStyles = {
     "& .rc-slider-rail": {
       height: "8px",
     },
+    [sizes.down("md")]: {
+      width: "150px",
+    },
+    [sizes.down("xs")]: {
+      width: "100px",
+    },
+  },
+  sliderText: {
+    [sizes.down("xs")]: {
+      fontSize: "14px",
+    },
   },
   selectContainer: {
     marginLeft: "auto",
-    marginRight: "2rem",
+    marginRight: "0",
   },
 };
 

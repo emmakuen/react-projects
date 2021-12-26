@@ -36,7 +36,7 @@ const Navbar = ({ level, handleSliderChange, changeFormat, classes }) => {
       </div>
       {level && (
         <div>
-          <span>Level: {level}</span>
+          <span className={classes.sliderText}>Level: {level}</span>
           <div className={classes.slider}>
             <Slider
               defaultValue={level}
