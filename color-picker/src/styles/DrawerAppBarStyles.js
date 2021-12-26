@@ -1,14 +1,22 @@
+import sizes from "./sizes";
+
 const DrawerAppBarStyles = {
-  root: {
+  appBar: {
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
     height: "64px",
+    [sizes.down("xs")]: {
+      height: "55px",
+    },
   },
   formContainer: {
     marginRight: "2rem",
     display: "flex",
     alignItems: "center",
+    [sizes.down("xs")]: {
+      marginRight: "5px",
+    },
   },
   goBackButton: {
     textDecoration: "none",
@@ -21,6 +29,11 @@ const DrawerAppBarStyles = {
     "&:hover": {
       backgroundColor: "#DB999F",
     },
+    [sizes.down("xs")]: {
+      padding: "5px",
+      fontSize: "12px",
+      marginRight: "5px",
+    },
   },
   saveButton: {
     backgroundColor: "rgba(247, 189, 175, 0.7)",
@@ -30,6 +43,9 @@ const DrawerAppBarStyles = {
     "&:hover": {
       color: "white",
       border: "1px solid rgba(255, 255, 255, 0.7)",
+    },
+    [sizes.down("xs")]: {
+      padding: "2px !important",
     },
   },
 };

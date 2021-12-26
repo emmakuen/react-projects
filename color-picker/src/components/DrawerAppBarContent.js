@@ -73,7 +73,7 @@ const DrawerAppBarContent = ({
         style={{ backgroundColor: "#e39a9d", color: "white" }}
         drawerWidth={drawerWidth}
       >
-        <div className={classes.root}>
+        <div className={classes.appBar}>
           <Toolbar>
             <IconButton
               color="inherit"
@@ -84,7 +84,12 @@ const DrawerAppBarContent = ({
             >
               <AddBoxIcon />
             </IconButton>
-            <Typography variant="h6" noWrap component="div">
+            <Typography
+              variant="h6"
+              fontSize={{ lg: 25, md: 20, sm: 20, xs: 15 }}
+              noWrap
+              component="div"
+            >
               Create a Palette
             </Typography>
           </Toolbar>
