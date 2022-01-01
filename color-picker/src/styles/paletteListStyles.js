@@ -1,3 +1,5 @@
+import sizes from "./sizes";
+
 const PaletteListStyles = {
   root: {
     backgroundColor: "#e39a9d",
@@ -5,24 +7,33 @@ const PaletteListStyles = {
     display: "flex",
     justifyContent: "center",
     alignItems: "flex-start",
-    overflowY: "scroll",
+    paddingBottom: "1rem",
   },
   container: {
-    maxWidth: "800px",
-    height: "100%",
+    width: "50%",
+    maxWidth: "900px",
     display: "flex",
     alignItems: "flex-start",
+    flexDirection: "column",
     flexWrap: "wrap",
+    [sizes.down("xl")]: {
+      width: "60%",
+    },
+    [sizes.down("lg")]: {
+      width: "80%",
+    },
+    [sizes.down("xs")]: {
+      width: "70%",
+    },
   },
   nav: {
     display: "flex",
     width: "100%",
-    boxSizing: "border-box",
     justifyContent: "space-between",
     color: "#fff",
     alignItems: "center",
-    paddingTop: "1rem",
-    paddingBottom: "1rem",
+    marginBottom: "1rem",
+    marginTop: "1rem",
     "& a": {
       textDecoration: "none",
       color: "white",
@@ -39,9 +50,15 @@ const PaletteListStyles = {
     boxSizing: "border-box",
     width: "100%",
     display: "grid",
-    gridGap: "2.5rem",
+    gridGap: "1.5rem",
     gridTemplateColumns: `repeat(3, 30%)`,
-    paddingBottom: "3rem",
+    [sizes.down("md")]: {
+      gridTemplateColumns: "repeat(2, 50%)",
+    },
+    [sizes.down("xs")]: {
+      gridTemplateColumns: "repeat(1, 100%)",
+      gridGap: "1rem",
+    },
   },
 };
 
