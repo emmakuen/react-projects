@@ -5,7 +5,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import DraggableColorBoxStyles from "../styles/DraggableColorBoxStyles";
 
 const DraggableColorBox = SortableElement(
-  ({ color, name, removeColor, classes }) => {
+  ({ color, formattedColor, name, removeColor, classes }) => {
     const handleClick = () => {
       removeColor(color);
     };

@@ -8,13 +8,15 @@ import DrawerContent from "../components/DrawerContent";
 import DrawerMainContent from "../components/DrawerMainContent";
 import { generateRandomColor } from "../utils/colorHelper";
 
+import seedPalettes from "../utils/seedPalettes";
+
 const drawerWidth = 400;
 
 const NewPaletteScreen = ({ palettes, setPalettes }) => {
   //   const theme = useTheme();
   const [open, setOpen] = useState(false);
   const [currentColor, setCurrentColor] = useState("teal");
-  const [colors, setColors] = useState(palettes[0].colors);
+  const [colors, setColors] = useState(seedPalettes[0].colors);
   const [paletteName, setPaletteName] = useState("");
   const [colorName, setColorName] = useState("");
   const [paletteEmoji, setPaletteEmoji] = useState("");

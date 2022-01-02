@@ -42,7 +42,7 @@ const ColorPickerForm = ({
         className={classes.picker}
       />
 
-      <ValidatorForm onSubmit={addColor}>
+      <ValidatorForm onSubmit={addColor} instantValidate={false}>
         <TextValidator
           className={classes.colorNameInput}
           placeholder="Color Name"

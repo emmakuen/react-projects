@@ -1,4 +1,5 @@
 import sizes from "./sizes";
+import { formatLightColor } from "../utils/colorHelper";
 
 const DraggableColorBoxStyles = {
   root: {
@@ -41,7 +42,7 @@ const DraggableColorBoxStyles = {
     padding: "10px",
     left: "0",
     bottom: "0",
-    color: "rgba(0, 0, 0, 0.5)",
+    color: (props) => formatLightColor(props),
     letterSpacing: "1px",
     textTransform: "uppercase",
     fontSize: "12px",
