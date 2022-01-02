@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { withStyles } from "@material-ui/styles";
-import { Select, MenuItem, Snackbar, IconButton } from "@mui/material";
 import Slider from "rc-slider";
+import { Select, MenuItem, Snackbar, IconButton } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 
+import { withStyles } from "@material-ui/styles";
 import "rc-slider/assets/index.css";
 import NavBarStyles from "../styles/NavBarStyles";
 

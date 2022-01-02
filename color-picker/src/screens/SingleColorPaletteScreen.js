@@ -1,11 +1,11 @@
 import { useParams } from "react-router-dom";
+import SingleColorPalette from "../components/SingleColorPalette";
+import NotFoundScreen from "./NotFoundScreen";
 import {
   findPalette,
   findColor,
   generateSingleColorPalette,
 } from "../utils/colorHelper";
-import SingleColorPalette from "../components/SingleColorPalette";
-import NotFoundScreen from "./NotFoundScreen";
 
 const SingleColorPaletteScreen = ({ palettes }) => {
   let params = useParams();

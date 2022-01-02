@@ -1,6 +1,6 @@
 import React from "react";
-import DrawerMain from "../components/DrawerMain";
-import DrawerHeader from "../components/DrawerHeader";
+import DrawerMain from "./DrawerMain";
+import DrawerHeader from "./DrawerHeader";
 import DraggableColorList from "./DraggableColorList";
 
 const DrawerMainContent = ({

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import DrawerAppBar from "../components/DrawerAppBar";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import AddBoxIcon from "@mui/icons-material/AddBox";
@@ -8,6 +7,7 @@ import Typography from "@mui/material/Typography";
 import { Button } from "@mui/material";
 import PaletteSaveForm from "./PaletteSaveForm";
 import EmojiPicker from "./EmojiPicker";
+import DrawerAppBar from "./DrawerAppBar";
 
 import { withStyles } from "@material-ui/styles";
 import DrawerAppBarStyles from "../styles/DrawerAppBarStyles";

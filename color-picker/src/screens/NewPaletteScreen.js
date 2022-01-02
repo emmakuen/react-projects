@@ -3,10 +3,10 @@ import { arrayMove } from "react-sortable-hoc";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
 
-import { generateRandomColor } from "../utils/colorHelper";
 import DrawerAppBarContent from "../components/DrawerAppBarContent";
 import DrawerContent from "../components/DrawerContent";
 import DrawerMainContent from "../components/DrawerMainContent";
+import { generateRandomColor } from "../utils/colorHelper";
 
 const drawerWidth = 400;
 

@@ -1,11 +1,11 @@
 import React from "react";
 import Drawer from "@mui/material/Drawer";
-import DrawerHeader from "../components/DrawerHeader";
 import IconButton from "@mui/material/IconButton";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import Typography from "@mui/material/Typography";
 import { Button } from "@mui/material";
-import ColorPickerForm from "../components/ColorPickerForm";
+import ColorPickerForm from "./ColorPickerForm";
+import DrawerHeader from "./DrawerHeader";
 
 import { withStyles } from "@material-ui/styles";
 import DrawerStyles from "../styles/DrawerStyles";

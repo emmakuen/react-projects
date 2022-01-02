@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
-import { generatePalette, findPalette } from "../utils/colorHelper";
 import Palette from "../components/Palette";
 import NotFoundScreen from "./NotFoundScreen";
+import { generatePalette, findPalette } from "../utils/colorHelper";
 
 const PaletteScreen = ({ palettes }) => {
   let params = useParams();

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { withStyles } from "@material-ui/styles";
 import { useNavigate, Link } from "react-router-dom";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 
@@ -15,6 +14,8 @@ import CloseIcon from "@mui/icons-material/Close";
 import { blue, red } from "@mui/material/colors";
 
 import MiniPalette from "../components/MiniPalette";
+
+import { withStyles } from "@material-ui/styles";
 import PaletteListStyles from "../styles/PaletteListStyles";
 
 const PaletteListScreen = ({ palettes, setPalettes, classes }) => {

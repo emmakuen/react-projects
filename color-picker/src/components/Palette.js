@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { withStyles } from "@material-ui/styles";
 import ColorBox from "./ColorBox";
 import Navbar from "./Navbar";
 import PaletteFooter from "./PaletteFooter";
+
+import { withStyles } from "@material-ui/styles";
 import PaletteStyles from "../styles/PaletteStyles";
 
 const Palette = ({ palette, classes }) => {
