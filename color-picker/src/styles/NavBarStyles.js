@@ -46,7 +46,7 @@ const NavBarStyles = {
     "& .rc-slider-rail": {
       height: "8px",
     },
-    [sizes.down("md")]: {
+    [sizes.down("sm")]: {
       width: "150px",
     },
     [sizes.down("xs")]: {
