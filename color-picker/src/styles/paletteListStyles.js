@@ -1,13 +1,17 @@
 import sizes from "./sizes";
+import bg from "./bg.svg";
 
 const PaletteListStyles = {
   root: {
-    backgroundColor: "#e39a9d",
     height: "100vh",
+    backgroundColor: "#e39a9d",
+    backgroundImage: `url(${bg})`,
+    // background by visiwig.com
     display: "flex",
     justifyContent: "center",
     alignItems: "flex-start",
     paddingBottom: "1rem",
+    overflowY: "scroll",
   },
   container: {
     width: "50%",
@@ -25,6 +29,9 @@ const PaletteListStyles = {
     [sizes.down("xs")]: {
       width: "70%",
     },
+  },
+  title: {
+    fontSize: "2rem",
   },
   nav: {
     display: "flex",
@@ -57,7 +64,7 @@ const PaletteListStyles = {
     },
     [sizes.down("xs")]: {
       gridTemplateColumns: "repeat(1, 100%)",
-      gridGap: "1rem",
+      gridGap: "1.4rem",
     },
   },
 };
