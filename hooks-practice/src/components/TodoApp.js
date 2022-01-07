@@ -1,5 +1,3 @@
-import React, { useEffect } from "react";
-
 import { Paper } from "@mui/material";
 import { Typography } from "@mui/material";
 import { AppBar } from "@mui/material";
@@ -11,21 +9,10 @@ import TodoForm from "./TodoForm";
 
 import useTodoState from "../hooks/useTodoState";
 
-const localStorageKey = "todos";
-
-const updateLocalStorage = (localStorageKey, value) => {
-  const jsonValue = JSON.stringify(value);
-  localStorage.setItem(localStorageKey, jsonValue);
-};
-
 const TodoApp = () => {
-  const initialTodos = JSON.parse(localStorage.getItem(localStorageKey)) || [];
+  const initialTodos = [];
   const { todos, addTodo, removeTodo, editTodo, toggleTodo } =
     useTodoState(initialTodos);
-
-  useEffect(() => {
-    updateLocalStorage(localStorageKey, todos);
-  }, [todos]);
 
   return (
     <Paper

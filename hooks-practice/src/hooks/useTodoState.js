@@ -1,8 +1,9 @@
-import { useState } from "react";
+import useLocalStorageState from "./useLocalStorageState";
 import { v4 as uuidv4 } from "uuid";
 
 const useTodoState = (initialTodos) => {
-  const [todos, setTodos] = useState(initialTodos);
+  const todosKey = "todos";
+  const [todos, setTodos] = useLocalStorageState(todosKey, initialTodos);
 
   return {
     todos,
