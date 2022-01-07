@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import { v4 as uuidv4 } from "uuid";
+import React, { useEffect } from "react";
 
 import { Paper } from "@mui/material";
 import { Typography } from "@mui/material";
@@ -10,6 +9,8 @@ import { Grid } from "@mui/material";
 import TodoList from "./TodoList";
 import TodoForm from "./TodoForm";
 
+import useTodoState from "../hooks/useTodoState";
+
 const localStorageKey = "todos";
 
 const updateLocalStorage = (localStorageKey, value) => {
@@ -19,35 +20,12 @@ const updateLocalStorage = (localStorageKey, value) => {
 
 const TodoApp = () => {
   const initialTodos = JSON.parse(localStorage.getItem(localStorageKey)) || [];
-  const [todos, setTodos] = useState(initialTodos);
+  const { todos, addTodo, removeTodo, editTodo, toggleTodo } =
+    useTodoState(initialTodos);
 
   useEffect(() => {
     updateLocalStorage(localStorageKey, todos);
   }, [todos]);
-
-  const addTodo = (newTask) => {
-    setTodos([...todos, { id: uuidv4(), task: newTask, completed: false }]);
-  };
-
-  const removeTodo = (id) => {
-    setTodos(todos.filter((todo) => todo.id !== id));
-  };
-
-  const editTodo = (id, updatedTask) => {
-    setTodos(
-      todos.map((todo) =>
-        todo.id === id ? { ...todo, task: updatedTask } : todo
-      )
-    );
-  };
-
-  const toggleTodo = (id) => {
-    setTodos(
-      todos.map((todo) =>
-        todo.id === id ? { ...todo, completed: !todo.completed } : todo
-      )
-    );
-  };
 
   return (
     <Paper
