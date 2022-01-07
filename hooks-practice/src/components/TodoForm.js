@@ -3,33 +3,55 @@ import { TextField } from "@mui/material";
 
 import useInputState from "../hooks/useInputState";
 
-const TodoForm = ({ addTodo }) => {
-  const [todoText, setTodoText, resetTodoText] = useInputState("");
+const TodoForm = ({
+  addTodo,
+  editTodo,
+  editingTodoId,
+  editingTodoText,
+  setEditing,
+}) => {
+  const [todoText, setTodoText, resetTodoText] = useInputState(
+    editingTodoText ? editingTodoText : ""
+  );
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addTodo(todoText);
+    if (editingTodoText) {
+      editTodo(editingTodoId, todoText);
+      setEditing(false);
+    } else {
+      addTodo(todoText);
+    }
     resetTodoText();
   };
 
-  return (
+  const buildForm = () => (
+    <form
+      onSubmit={handleSubmit}
+      style={{ padding: editingTodoText ? "0 0.9rem" : "0", width: "100%" }}
+    >
+      <TextField
+        value={todoText}
+        onChange={setTodoText}
+        label={editingTodoText ? "Edit Todo" : "Add New Todo"}
+        margin="normal"
+        fullWidth
+        variant="standard"
+        autoComplete="off"
+      />
+    </form>
+  );
+
+  return editingTodoText ? (
+    buildForm()
+  ) : (
     <Paper
       style={{
         margin: "1rem 0",
         padding: "0 1rem 0.3rem",
       }}
     >
-      <form onSubmit={handleSubmit}>
-        <TextField
-          value={todoText}
-          onChange={setTodoText}
-          label="Add New Todo"
-          margin="normal"
-          fullWidth
-          variant="standard"
-          autoComplete="off"
-        />
-      </form>
+      {buildForm()}
     </Paper>
   );
 };

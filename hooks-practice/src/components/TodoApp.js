@@ -19,16 +19,20 @@ const TodoApp = () => {
 
   const [todos, setTodos] = useState(initialTodos);
 
-  const addTodo = (newTodoText) => {
-    setTodos([...todos, { id: uuidv4(), task: newTodoText, completed: false }]);
+  const addTodo = (newTask) => {
+    setTodos([...todos, { id: uuidv4(), task: newTask, completed: false }]);
   };
 
   const removeTodo = (id) => {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
 
-  const editTodo = (id) => {
-    console.log("<edit id>", id);
+  const editTodo = (id, updatedTask) => {
+    setTodos(
+      todos.map((todo) =>
+        todo.id === id ? { ...todo, task: updatedTask } : todo
+      )
+    );
   };
 
   const toggleTodo = (id) => {
