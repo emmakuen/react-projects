@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 import { Paper } from "@mui/material";
@@ -10,14 +10,20 @@ import { Grid } from "@mui/material";
 import TodoList from "./TodoList";
 import TodoForm from "./TodoForm";
 
-const TodoApp = () => {
-  const initialTodos = [
-    { id: 1, task: "Shopping", completed: false },
-    { id: 2, task: "Do dishes", completed: true },
-    { id: 3, task: "Walk dogs", completed: false },
-  ];
+const localStorageKey = "todos";
 
+const updateLocalStorage = (localStorageKey, value) => {
+  const jsonValue = JSON.stringify(value);
+  localStorage.setItem(localStorageKey, jsonValue);
+};
+
+const TodoApp = () => {
+  const initialTodos = JSON.parse(localStorage.getItem(localStorageKey)) || [];
   const [todos, setTodos] = useState(initialTodos);
+
+  useEffect(() => {
+    updateLocalStorage(localStorageKey, todos);
+  }, [todos]);
 
   const addTodo = (newTask) => {
     setTodos([...todos, { id: uuidv4(), task: newTask, completed: false }]);
