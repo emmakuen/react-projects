@@ -28,16 +28,21 @@ const TodoForm = ({
   const buildForm = () => (
     <form
       onSubmit={handleSubmit}
-      style={{ padding: editingTodoText ? "0 0.9rem" : "0", width: "100%" }}
+      style={{
+        padding: editingTodoText ? "0 0.9rem" : "0",
+        width: "100%",
+        height: editingTodoText ? "42px" : "100%",
+      }}
     >
       <TextField
         value={todoText}
         onChange={setTodoText}
-        label={editingTodoText ? "Edit Todo" : "Add New Todo"}
+        label={editingTodoText ? "" : "Add New Todo"}
         margin="normal"
         fullWidth
         variant="standard"
         autoComplete="off"
+        autoFocus={editingTodoText ? true : false}
       />
     </form>
   );
