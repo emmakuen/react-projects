@@ -23,6 +23,22 @@ const TodoApp = () => {
     setTodos([...todos, { id: uuidv4(), task: newTodoText, completed: false }]);
   };
 
+  const removeTodo = (id) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
+  };
+
+  const editTodo = (id) => {
+    console.log("<edit id>", id);
+  };
+
+  const toggleTodo = (id) => {
+    setTodos(
+      todos.map((todo) =>
+        todo.id === id ? { ...todo, completed: !todo.completed } : todo
+      )
+    );
+  };
+
   return (
     <Paper
       style={{
@@ -41,7 +57,12 @@ const TodoApp = () => {
       <Grid container justifyContent="center" style={{ marginTop: "1.5rem" }}>
         <Grid item xs={11} md={8} lg={4}>
           <TodoForm addTodo={addTodo} />
-          <TodoList todos={todos} />
+          <TodoList
+            todos={todos}
+            removeTodo={removeTodo}
+            editTodo={editTodo}
+            toggleTodo={toggleTodo}
+          />
         </Grid>
       </Grid>
     </Paper>
