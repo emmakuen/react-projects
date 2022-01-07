@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 import { Paper } from "@mui/material";
 import { Typography } from "@mui/material";
@@ -7,6 +8,7 @@ import { Toolbar } from "@mui/material";
 import { Grid } from "@mui/material";
 
 import TodoList from "./TodoList";
+import TodoForm from "./TodoForm";
 
 const TodoApp = () => {
   const initialTodos = [
@@ -16,6 +18,10 @@ const TodoApp = () => {
   ];
 
   const [todos, setTodos] = useState(initialTodos);
+
+  const addTodo = (newTodoText) => {
+    setTodos([...todos, { id: uuidv4(), task: newTodoText, completed: false }]);
+  };
 
   return (
     <Paper
@@ -32,7 +38,12 @@ const TodoApp = () => {
           <Typography color="inherit">TODOS WITH HOOKS</Typography>
         </Toolbar>
       </AppBar>
-      <TodoList todos={todos} />
+      <Grid container justifyContent="center" style={{ marginTop: "1.5rem" }}>
+        <Grid item xs={11} md={8} lg={4}>
+          <TodoForm addTodo={addTodo} />
+          <TodoList todos={todos} />
+        </Grid>
+      </Grid>
     </Paper>
   );
 };
