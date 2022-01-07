@@ -1,8 +1,6 @@
-// import TodoItem from "./TodoItem";
+import TodoItem from "./TodoItem";
 import { Paper } from "@mui/material";
 import { List } from "@mui/material";
-import { ListItem } from "@mui/material";
-import { ListItemText } from "@mui/material";
 import { Divider } from "@mui/material";
 
 const TodoList = ({ todos = [] }) => {
@@ -11,9 +9,7 @@ const TodoList = ({ todos = [] }) => {
       <List>
         {todos.map((todo) => (
           <div key={todo.id}>
-            <ListItem>
-              <ListItemText>{todo.task}</ListItemText>
-            </ListItem>
+            <TodoItem todo={todo} key={todo.id} />
             <Divider />
           </div>
         ))}
