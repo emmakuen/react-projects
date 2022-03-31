@@ -1,4 +1,4 @@
-import { AppContainer, Column, Card } from "./components";
+import { AppContainer, Column, Card, AddNewItem } from "./components";
 
 function App() {
   return (
@@ -12,6 +12,7 @@ function App() {
       <Column text="To Do">
         <Card text="Generate App Scaffold" />
       </Column>
+      <AddNewItem toggleButtonText="+ Add another list" onAdd={console.log} />
     </AppContainer>
   );
 }

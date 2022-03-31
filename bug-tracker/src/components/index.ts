@@ -1,15 +1,7 @@
 import { AppContainer } from "./AppContainer";
 import { CardContainer } from "./CardContainer";
-import { ColumnContainer } from "./ColumnContainer";
-import { ColumnTitle } from "./ColumnTitle";
-import { Column } from "./Column";
+import { Column } from "./Column/Column";
 import { Card } from "./Card";
+import { AddNewItem } from "./AddNewItem";
 
-export {
-  AppContainer,
-  CardContainer,
-  ColumnContainer,
-  ColumnTitle,
-  Column,
-  Card,
-};
+export { AppContainer, CardContainer, Column, Card, AddNewItem };
