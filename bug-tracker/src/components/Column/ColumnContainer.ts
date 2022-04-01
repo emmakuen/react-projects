@@ -7,4 +7,5 @@ export const ColumnContainer = styled.div`
   border-radius: 3px;
   padding: 8px 8px;
   flex-grow: 0;
+  align-items: stretch;
 `;

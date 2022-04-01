@@ -7,5 +7,6 @@ export const NewItemButton = styled.button`
   box-shadow: none;
   color: #fff;
   padding: 6px 12px;
+  align-self: flex-start;
   text-align: center;
 `;
