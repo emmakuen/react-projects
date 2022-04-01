@@ -1,6 +1,6 @@
 import * as React from "react";
 import { AddItemButton } from "./AddItemButton";
-import { NewItemForm } from "./NewItem";
+import { NewItemForm } from "../NewItem";
 
 interface AddNewItemProps {
   onAdd(text: string): void;

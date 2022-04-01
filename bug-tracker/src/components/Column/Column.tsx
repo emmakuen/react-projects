@@ -1,5 +1,5 @@
 import React from "react";
-import { AddNewItem } from "../AddNewItem";
+import { AddNewItem } from "../common/AddNewItem";
 import { ColumnContainer } from "./ColumnContainer";
 import { ColumnTitle } from "./ColumnTitle";
 

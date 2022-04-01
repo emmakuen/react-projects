@@ -1,5 +1,4 @@
-import React from "react";
-import { CardContainer } from "./index";
+import { CardContainer } from ".";
 
 interface CardProps {
   text: string;

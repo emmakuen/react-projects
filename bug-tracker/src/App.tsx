@@ -1,4 +1,5 @@
-import { AppContainer, Column, Card, AddNewItem } from "./components";
+import { AppContainer, Card, AddNewItem } from "./components/common";
+import Column from "./components/Column";
 
 function App() {
   return (
