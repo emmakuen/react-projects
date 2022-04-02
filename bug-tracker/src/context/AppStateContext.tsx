@@ -51,7 +51,4 @@ export const AppStateProvider = ({ children }: React.PropsWithChildren<{}>) => {
   );
 };
 
-export const useAppStateContext = () => {
-  const context = React.useContext(AppStateContext);
-  return context;
-};
+export const useAppState = () => React.useContext(AppStateContext);
