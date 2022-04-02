@@ -1,22 +1,10 @@
 import * as React from "react";
-
-interface Task {
-  id: string;
-  text: string;
-}
-
-interface List {
-  id: string;
-  text: string;
-  tasks: Task[];
-}
-
-export interface AppState {
-  lists: List[];
-}
+import { appStateReducer } from "../reducers/appStateReducer";
+import { AppState, Action } from "../interfaces/appState";
 
 interface AppStateContextProps {
   state: AppState;
+  dispatch: React.Dispatch<Action>;
 }
 
 const appData: AppState = {
@@ -44,8 +32,9 @@ const AppStateContext = React.createContext<AppStateContextProps>(
 );
 
 export const AppStateProvider = ({ children }: React.PropsWithChildren<{}>) => {
+  const [state, dispatch] = React.useReducer(appStateReducer, appData);
   return (
-    <AppStateContext.Provider value={{ state: appData }}>
+    <AppStateContext.Provider value={{ state, dispatch }}>
       {children}
     </AppStateContext.Provider>
   );
