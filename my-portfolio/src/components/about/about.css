@@ -1,0 +1,71 @@
+.a {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.a-left,
+.a-right {
+    flex: 1;
+    padding: 50px;
+}
+
+.a-left {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+
+.a-card {
+    width: 100%;
+    height: 40vh;
+    border-radius: 30px;
+    position: relative;
+}
+
+.a-card::after {
+    content: "";
+    position: absolute;
+    background-color: #df6668;
+    opacity: 0.3;
+    z-index: -1;
+    height: 80%;
+    width: 80%;
+    top: -10px;
+    left: 50px;
+    border-radius: 20px;
+}
+
+.a-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.a-achievement {
+    margin-top: 50px;
+    display: flex;
+    gap: 25px;
+}
+
+.a-achievement-texts {
+    width: 70%;
+}
+
+.a-achievement-img {
+    height: 60px;
+    border-radius: 10px;
+}
+
+.a-title {
+    font-weight: 400;
+}
+
+.a-sub {
+    margin: 20px 0px;
+}
+
+.a-desc {
+    font-weight: 300;
+}

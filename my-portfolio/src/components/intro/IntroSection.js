@@ -3,13 +3,14 @@ import MouseScroll from "./MouseScroll";
 
 const IntroSection = () => {
   return (
-    <div className="i">
+    <section className="i">
       <div className="i-left">
         <div className="i-left-wrapper">
-          <h2 className="i-intro">Hello,</h2>
-          <h1>
-            My name is <span className="i-name">Emma</span>.
-          </h1>
+          <h2 className="i-intro">
+            Hello,
+            <br /> I'm <span className="i-name">Emma</span>.
+          </h2>
+
           <div className="i-title">
             <div className="i-title-wrapper">
               <div className="i-title-item">Web Developer</div>
@@ -36,10 +37,10 @@ const IntroSection = () => {
             transform="translate(100 100)"
           />
         </svg>
-        <img src="/assets/svg/me.svg" alt="" className="i-img" />
+        <img src="/assets/images/me.png" alt="" className="i-img" />
       </div>
       <MouseScroll />
-    </div>
+    </section>
   );
 };
 
