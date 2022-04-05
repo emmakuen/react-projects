@@ -37,6 +37,8 @@
 .navbar .link-text {
     display: none;
     margin-left: 1rem;
+    font-weight: 500;
+    color: var(--primary);
 }
 
 .nav-icon {

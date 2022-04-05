@@ -1,22 +1,30 @@
 import React, { useState } from "react";
 import PortfolioCard from "./PortfolioCard";
 import "./portfolioList.css";
+import { portfolioTypes, portfolios } from "./constants";
+import PortfolioFilter from "./PortfolioFilter";
 const PortfolioList = () => {
+  const [selected, setSelected] = useState(portfolioTypes[0].id);
+  const handleClick = (e) => setSelected(e.target.id);
+
   return (
     <div className="portfolio" id="portfolio">
       <h1 className="title">Portfolio</h1>
       <ul className="pl-filters">
-        <li className="pl-filter active">Featured</li>
-        <li className="pl-filter">Web App</li>
-        <li className="pl-filter">Mobile App</li>
-        <li className="pl-filter">Design</li>
-        <li className="pl-filter">BI Dashboard</li>
+        {portfolioTypes.map((portfolioType) => (
+          <PortfolioFilter
+            text={portfolioType.text}
+            key={portfolioType.id}
+            id={portfolioType.id}
+            isActive={selected === portfolioType.id ? " active" : ""}
+            onClick={handleClick}
+          />
+        ))}
       </ul>
       <div className="pl-card-container">
-        <PortfolioCard />
-        <PortfolioCard />
-        <PortfolioCard />
-        <PortfolioCard />
+        {portfolios.map((portfolio) => (
+          <PortfolioCard portfolio={portfolio} key={portfolio.id} />
+        ))}
       </div>
     </div>
   );

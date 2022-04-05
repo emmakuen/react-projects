@@ -23,11 +23,13 @@
 }
 
 .i-intro {
-    font-size: 3rem;
+    font-size: 4rem;
+    font-family: 'Architects Daughter', cursive;
 }
 
 .i-name {
-    font-size: 4rem;
+    font-family: inherit;
+    font-size: 5rem;
 }
 
 .i-title-item {

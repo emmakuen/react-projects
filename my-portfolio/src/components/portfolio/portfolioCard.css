@@ -1,0 +1,124 @@
+.pl-item {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    background-color: var(--background);
+    overflow: hidden;
+    display: flex;
+    border-radius: 30px;
+    transition: 0.5s ease-in-out;
+    margin-bottom: 20px;
+    border: 1px solid var(--gray-ghost);
+}
+
+.pl-item:hover {
+    width: 600px;
+}
+
+.pl-item:hover .pl-item-img {
+    transform: scale(1.1);
+}
+
+.pl-item-imgbox {
+    position: relative;
+    min-width: 300px;
+    height: 100%;
+    background-color: var(--background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.pl-item-img {
+    height: 100%;
+    width: 300px;
+    object-position: center top;
+    object-fit: cover;
+    transition: all 0.5s ease-in-out;
+}
+
+
+
+.pl-item-details {
+    position: relative;
+    width: 300px;
+    height: 100%;
+    background-color: var(--primary);
+    padding: 20px;
+    display: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.pl-item-details h3 {
+    color: var(--background);
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 1.2rem;
+}
+
+.pl-item-details h3 span {
+    color: inherit;
+    font-size: 0.85rem;
+    font-weight: 300;
+    text-transform: none;
+    opacity: 0.85;
+}
+
+
+.pl-item-details p {
+    margin-top: 20px;
+    color: var(--background);
+    opacity: 0.85;
+    font-size: 0.85rem;
+}
+
+.pl-item-details .frameworks {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.pl-item-details .frameworks li {
+    list-style: none;
+    color: var(--background);
+    font-size: 0.9rem;
+    padding: 5px 10px;
+    border: 2px solid var(--background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    opacity: 0.6;
+    cursor: pointer;
+    transition: all 0.5s;
+    border-radius: 50px;
+}
+
+.pl-item-details .frameworks li:hover {
+    color: var(--primary);
+    background-color: var(--background);
+    opacity: 0.6;
+}
+
+.pl-item-details .action-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    padding: 10px 10px;
+    background-color: var(--background);
+    text-decoration: none;
+    font-weight: 500;
+    max-width: 100px;
+    border-radius: 20px;
+    color: var(--primary);
+}
+
+.pl-item-details .action-button:hover {
+    opacity: 0.9;
+}
