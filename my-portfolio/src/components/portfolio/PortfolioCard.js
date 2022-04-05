@@ -1,16 +1,12 @@
 import "./portfolioCard.css";
 
 const PortfolioCard = ({ portfolio }) => {
-  const { title, subtitle, explanation, portfolioType, frameworks } = portfolio;
+  const { title, subtitle, explanation, imgSrc, frameworks } = portfolio;
   return (
     <>
       <div className="pl-item">
         <div className="pl-item-imgbox">
-          <img
-            src="/assets/images/portfolio/webpage.jpg"
-            alt="webpage"
-            className="pl-item-img"
-          />
+          <img src={imgSrc} alt="webpage" className="pl-item-img" />
         </div>
         <div className="pl-item-details">
           <h3>

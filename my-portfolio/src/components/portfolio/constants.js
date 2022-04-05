@@ -1,7 +1,7 @@
 export const portfolioTypes = [
   {
     id: "all",
-    text: "all",
+    text: "See All",
   },
   {
     id: "web",
@@ -26,6 +26,7 @@ export const portfolios = [
     id: "web1",
     title: "Project title",
     subtitle: "Project Subtitle",
+    imgSrc: "/assets/images/portfolio/website.jpg",
     explanation:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, rerum?",
     portfolioType: "web",
@@ -35,6 +36,7 @@ export const portfolios = [
     id: "web2",
     title: "Project title",
     subtitle: "Project Subtitle",
+    imgSrc: "/assets/images/portfolio/website2.jpg",
     explanation:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, rerum?",
     portfolioType: "web",
@@ -44,6 +46,7 @@ export const portfolios = [
     id: "web3",
     title: "Project title",
     subtitle: "Project Subtitle",
+    imgSrc: "/assets/images/portfolio/website3.jpg",
     explanation:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, rerum?",
     portfolioType: "web",
@@ -53,6 +56,7 @@ export const portfolios = [
     id: "design1",
     title: "Project title",
     subtitle: "Project Subtitle",
+    imgSrc: "/assets/images/portfolio/design1.jpg",
     explanation:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, rerum?",
     portfolioType: "design",
@@ -62,6 +66,7 @@ export const portfolios = [
     id: "design2",
     title: "Project title",
     subtitle: "Project Subtitle",
+    imgSrc: "/assets/images/portfolio/design2.jpg",
     explanation:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, rerum?",
     portfolioType: "design",
@@ -71,6 +76,7 @@ export const portfolios = [
     id: "bi1",
     title: "Project title",
     subtitle: "Project Subtitle",
+    imgSrc: "/assets/images/portfolio/tableau1.jpg",
     explanation:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, rerum?",
     portfolioType: "bi",
@@ -80,6 +86,7 @@ export const portfolios = [
     id: "bi2",
     title: "Project title",
     subtitle: "Project Subtitle",
+    imgSrc: "/assets/images/portfolio/tableau2.jpg",
     explanation:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, rerum?",
     portfolioType: "bi",
@@ -89,6 +96,7 @@ export const portfolios = [
     id: "bi3",
     title: "Project title",
     subtitle: "Project Subtitle",
+    imgSrc: "/assets/images/portfolio/tableau3.jpg",
     explanation:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, rerum?",
     portfolioType: "bi",
