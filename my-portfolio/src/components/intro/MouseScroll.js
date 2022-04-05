@@ -1,6 +1,6 @@
 import React from "react";
 import "./intro.css";
-import { primaryColor } from "../../constants/themes";
+import { primaryColor } from "../../contexts/useTheme";
 
 const MouseScroll = () => {
   return (

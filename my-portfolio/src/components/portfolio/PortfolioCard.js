@@ -1,3 +1,5 @@
+import "./portfolioList.css";
+
 const PortfolioCard = () => {
   return (
     <>
@@ -7,7 +9,7 @@ const PortfolioCard = () => {
           alt="webpage"
           className="pl-item-img"
         />
-        <h3>Landing Page</h3>
+        <h3 className="pl-item-title">Landing Page</h3>
       </div>
     </>
   );
