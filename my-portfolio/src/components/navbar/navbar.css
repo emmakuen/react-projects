@@ -1,6 +1,6 @@
 .navbar {
     position: fixed;
-    background-color: #fcedee;
+    background-color: var(--secondary);
     transition: width 200ms ease;
     z-index: 100;
 }
@@ -23,15 +23,15 @@
     display: flex;
     align-items: center;
     height: 5rem;
-    color: #df6668;
+    color: var(--primary);
+    filter: grayscale(1) brightness(1.5);
     text-decoration: none;
-    filter: grayscale(100%) opacity(0.7);
     transition: all 200ms ease-in;
 }
 
 .nav-link:hover {
-    filter: grayscale(0) opacity(1);
-    background-color: #ffffff;
+    filter: grayscale(0) brightness(1);
+    background-color: var(--background);
 }
 
 .navbar .link-text {

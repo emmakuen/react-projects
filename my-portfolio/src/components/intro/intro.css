@@ -30,31 +30,12 @@
     font-size: 4rem;
 }
 
-.i-title {
-    height: 50px;
-    overflow: hidden;
-}
-
-.i-title-wrapper {
-    height: 100%;
-    animation: move 5s ease-in-out infinite alternate;
-}
-
-@keyframes move {
-    50% {
-        transform: translateY(-50px);
-    }
-
-    100% {
-        transform: translateY(-100px);
-    }
-}
-
 .i-title-item {
     height: 50px;
     font-weight: bold;
+    display: inline;
     font-size: 2rem;
-    color: #df6668;
+    color: var(--primary);
     display: flex;
     align-items: center;
 }
@@ -87,5 +68,5 @@
     position: absolute;
     bottom: 50px;
     left: 50%;
-    color: #df6668;
+    color: var(--primary);
 }

@@ -11,7 +11,7 @@ const AboutSection = () => {
       </div>
       <div className="a-right">
         <div className="a-text">
-          <h2 className="a-title">About Me</h2>
+          <h2 className="title">About Me</h2>
           <p className="a-sub">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti,
             reprehenderit.
@@ -19,10 +19,7 @@ const AboutSection = () => {
           <p className="a-desc">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi
             magnam maxime consequatur tenetur dolor deserunt minima vitae quis
-            est. Voluptate at cum nam ad voluptatem mollitia quaerat iure
-            perspiciatis quibusdam nisi veritatis distinctio, velit provident
-            aspernatur animi dolorum reprehenderit iusto quisquam quidem,
-            delectus nulla ea dolore expedita vel. Labore, nam.
+            est. Voluptate at cum nam ad voluptatem mollitia quaerat.
           </p>
         </div>
         <Achievement

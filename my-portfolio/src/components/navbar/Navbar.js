@@ -5,26 +5,26 @@ import AboutIcon from "./AboutIcon";
 import PortfolioIcon from "./PortfolioIcon";
 import ContactIcon from "./ContactIcon";
 import { ReactComponent as DarkIcon } from "../../svg/darkmode.svg";
+import { primaryColor } from "../../constants/themes";
 
 const Navbar = () => {
-  const fillColor = "#df6668";
   return (
     <nav className="navbar">
       <ul className="navbar-nav">
         <NavLink destination="home">
-          <HomeIcon fill={fillColor} />
+          <HomeIcon fill={primaryColor} />
         </NavLink>
         <NavLink destination="about">
-          <AboutIcon fill={fillColor} />
+          <AboutIcon fill={primaryColor} />
         </NavLink>
         <NavLink destination="portfolio">
-          <PortfolioIcon fill={fillColor} />
+          <PortfolioIcon fill={primaryColor} />
         </NavLink>
         <NavLink destination="contact">
-          <ContactIcon fill={fillColor} />
+          <ContactIcon fill={primaryColor} />
         </NavLink>
         <NavLink destination="dark mode">
-          <DarkIcon fill={fillColor} className="nav-icon" />
+          <DarkIcon fill={primaryColor} className="nav-icon" />
         </NavLink>
       </ul>
     </nav>

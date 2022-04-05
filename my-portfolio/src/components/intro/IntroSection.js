@@ -1,7 +1,21 @@
 import "./intro.css";
 import MouseScroll from "./MouseScroll";
+import { init } from "ityped";
+import { useEffect, useRef } from "react";
+import { typedTexts } from "./constants";
 
 const IntroSection = () => {
+  const typedTextRef = useRef();
+  useEffect(() => {
+    init(typedTextRef.current, {
+      backDelay: 1500,
+      backSpeed: 60,
+      typeSpeed: 50,
+      strings: typedTexts,
+      showCursor: false,
+    });
+  }, []);
+
   return (
     <section className="i">
       <div className="i-left">
@@ -11,13 +25,9 @@ const IntroSection = () => {
             <br /> I'm <span className="i-name">Emma</span>.
           </h2>
 
-          <div className="i-title">
-            <div className="i-title-wrapper">
-              <div className="i-title-item">Web Developer</div>
-              <div className="i-title-item">UI/UX Designer</div>
-              <div className="i-title-item">Data Analyst</div>
-            </div>
-          </div>
+          <h3 className="i-title">
+            <span className="i-title-item" ref={typedTextRef}></span>
+          </h3>
           <p className="i-desc">
             I design and develop services for customers of all sizes,
             specializing in creating stylish, modern websites, web services and
