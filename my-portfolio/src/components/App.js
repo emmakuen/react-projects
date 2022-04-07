@@ -2,6 +2,7 @@ import Navbar from "./navbar/Navbar";
 import IntroSection from "./intro/IntroSection";
 import AboutSection from "./about/AboutSection";
 import PortfolioList from "./portfolio/PortfolioList";
+import ContactSection from "./contact/ContactSection";
 import * as React from "react";
 import { useTheme } from "../contexts/useTheme";
 function App() {
@@ -12,6 +13,7 @@ function App() {
       <IntroSection />
       <AboutSection />
       <PortfolioList />
+      <ContactSection />
     </div>
   );
 }

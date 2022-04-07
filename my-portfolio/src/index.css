@@ -4,7 +4,7 @@
   --background: #fffffc;
   --text: #2d2a27;
   --primary: #df6678;
-  --accent: rgba(231, 187, 116, 0.2);
+  --accent: rgba(242, 202, 133, 0.85);
   --secondary: rgba(223, 102, 120, 0.4);
   --gray-primary: #888;
   --gray-secondary: rgba(51, 51, 51, 0.25);
@@ -15,7 +15,7 @@
   --background: #2d2a27;
   --text: #fffffc;
   --primary: #df6678;
-  --accent: rgba(231, 187, 116, 0.2);
+  --accent: rgba(242, 202, 133, 0.8);
   --secondary: rgba(223, 102, 120, 0.4);
   --gray-primary: #888;
   --gray-secondary: rgba(255, 255, 252, 0.25);
@@ -30,6 +30,7 @@
   color: var(--text);
   margin: 0;
   padding: 0;
+  letter-spacing: 0.5px;
 }
 
 body::-webkit-scrollbar {
