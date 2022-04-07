@@ -1,21 +1,33 @@
 import React, { useEffect, useState } from "react";
-import { motion, useSpring } from "framer-motion";
+import { motion, useMotionValue } from "framer-motion";
 import PortfolioCard from "./PortfolioCard";
 import PortfolioFilter from "./PortfolioFilter";
 import { portfolioTypes, portfolios } from "./constants";
 import "./portfolioList.css";
+
+const LEFT_END_ALL = -1725;
+const LEFT_END_FILTERED = -80;
+const X_START = 0;
+
 const PortfolioList = () => {
   const [selected, setSelected] = useState("all");
   const [selectedPortfolios, setSelectedPortfolios] = useState(portfolios);
+  const [left, setLeft] = useState(LEFT_END_ALL);
+  const x = useMotionValue(X_START);
 
   useEffect(() => {
     if (selected === "all") {
-      return setSelectedPortfolios(portfolios);
+      setSelectedPortfolios(portfolios);
+      setLeft(LEFT_END_ALL);
+      x.set(X_START);
+      return;
     }
     const filteredPortfolios = portfolios.filter(
       (portfolio) => portfolio.portfolioType === selected
     );
     setSelectedPortfolios(filteredPortfolios);
+    setLeft(LEFT_END_FILTERED);
+    x.set(X_START);
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selected]);
@@ -41,7 +53,8 @@ const PortfolioList = () => {
         <motion.div className="pl-carousel" whileTap={{ cursor: "grabbing" }}>
           <motion.div
             drag="x"
-            dragConstraints={{ right: 0, left: -1725 }}
+            dragConstraints={{ right: 0, left: left }}
+            style={{ x }}
             className="pl-card-container"
           >
             {selectedPortfolios.map((portfolio) => (
