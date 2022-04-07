@@ -70,5 +70,59 @@
     position: absolute;
     bottom: 50px;
     left: 50%;
+    transform: translateX(-50%);
     color: var(--primary);
+}
+
+@media screen and (max-width: 480px) {
+    .i {
+        flex-direction: column;
+        height: 100%;
+        text-align: center;
+        position: relative;
+        padding-top: 50px;
+        padding-bottom: 100px;
+    }
+
+    .i-left,
+    .i-right,
+    .i-left-wrapper {
+        padding: 0;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .i-right {
+        width: 100%;
+        padding-top: 50px;
+    }
+
+    .i-bg {
+        display: none;
+    }
+
+    .i-img {
+        transform: translateX(8.5%);
+    }
+
+    .i-intro {
+        font-size: 3rem;
+    }
+
+    .i-name {
+        font-size: 4rem;
+    }
+
+    .i-desc {
+        display: none;
+    }
+
+    .i-title-item {
+        font-size: 1.5rem;
+    }
+
+    .i-scroll {
+        bottom: 10px;
+    }
+
 }

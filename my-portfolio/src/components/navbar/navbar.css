@@ -54,15 +54,38 @@
         bottom: 0;
         width: 100vw;
         height: 5rem;
+        background-color: var(--primary);
     }
 
     .navbar-nav {
         flex-direction: row;
-        padding: 0 2rem;
     }
 
     .nav-link {
         justify-content: center;
+        height: auto;
+    }
+
+    .nav-icon {
+        width: 2rem;
+        max-height: 2rem;
+    }
+
+    .nav-item.theme {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: fit-content;
+        height: fit-content;
+        background-color: var(--gray-secondary);
+        border-radius: 50%;
+        padding: 0;
+        margin: 1rem;
+        padding: 5px;
+    }
+
+    .nav-item.theme .nav-icon {
+        margin: 0;
     }
 
 }

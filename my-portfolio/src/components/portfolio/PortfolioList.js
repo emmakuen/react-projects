@@ -35,7 +35,7 @@ const PortfolioList = () => {
   const handleClick = (e) => setSelected(e.target.id);
 
   return (
-    <div className="portfolio" id="portfolio">
+    <section className="portfolio" id="portfolio">
       <h1 className="title">Portfolio</h1>
       <ul className="pl-filters">
         {portfolioTypes.map((portfolioType) => (
@@ -65,7 +65,7 @@ const PortfolioList = () => {
           </motion.div>
         </motion.div>
       )}
-    </div>
+    </section>
   );
 };
 

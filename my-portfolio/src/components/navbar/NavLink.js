@@ -5,7 +5,7 @@ import "./navbar.css";
 const NavLink = ({ destination, children, text, onClick }) => {
   if (!destination)
     return (
-      <li className="nav-item" onClick={onClick}>
+      <li className="nav-item theme" onClick={onClick}>
         <div className="nav-link">
           {children}
           <span className="link-text">{text}</span>

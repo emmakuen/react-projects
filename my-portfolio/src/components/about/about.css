@@ -12,6 +12,7 @@
 
 .a-left {
     height: 100%;
+    width: 100%;
     display: flex;
     align-items: center;
 }
@@ -73,4 +74,52 @@
 
 .a-desc {
     font-weight: 300;
+}
+
+@media screen and (max-width: 480px) {
+
+    .a {
+        height: 100%;
+        padding: 50px 0;
+    }
+
+    .a-left,
+    .a-right {
+        padding: 50px 0;
+    }
+
+    .a-right {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .a-desc {
+        display: none;
+    }
+
+    .a-card {
+        height: 100px;
+        width: 100%;
+        margin-top: -3rem;
+    }
+
+    .a-card::before {
+        height: 100%;
+        width: 14rem;
+        top: 10px;
+    }
+
+    .a-achievement {
+        text-align: left;
+    }
+
+    .a-img {
+        width: 10rem;
+        height: 10rem;
+        top: -1rem;
+        right: -0.5rem;
+    }
+
 }
