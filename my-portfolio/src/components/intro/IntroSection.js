@@ -22,7 +22,7 @@ const IntroSection = () => {
         <div className="i-left-wrapper">
           <h2 className="i-intro">
             Hello,
-            <br /> I'm <span className="i-name">Emma</span>.
+            <br /> I'm <h1 className="i-name">Emma</h1>.
           </h2>
 
           <h3 className="i-title">

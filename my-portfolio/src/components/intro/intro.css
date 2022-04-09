@@ -30,6 +30,7 @@
 .i-name {
     font-family: inherit;
     font-size: 5rem;
+    display: inline;
 }
 
 .i-title-item {

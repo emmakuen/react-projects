@@ -46,10 +46,12 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
   background: var(--secondary);
   border-radius: 50px;
+  border: var(--secondary) solid 2px;
 }
 
 body::-webkit-scrollbar-thumb:hover {
   background: var(--secondary);
+  border: var(--secondary) solid 4px;
 }
 
 #root {
