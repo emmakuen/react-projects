@@ -1,5 +1,5 @@
 .a {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
 }
@@ -53,7 +53,7 @@
 }
 
 .a-achievement-texts {
-    width: 70%;
+    max-width: 300px;
 }
 
 .a-achievement-title {
@@ -70,16 +70,63 @@
 
 .a-sub {
     margin: 20px 0px;
+    max-width: 450px;
 }
 
 .a-desc {
     font-weight: 300;
 }
 
-@media screen and (max-width: 480px) {
+@media only screen and (max-width: 800px) {
+    .a {
+        min-height: -webkit-fill-available;
+        flex-direction: column-reverse;
+        margin: 100px 0;
+    }
+
+    .a-left,
+    .a-right {
+        padding: 50px 0;
+    }
+
+    .a-right {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .a-desc {
+        display: none;
+    }
+
+    .a-card {
+        height: 100px;
+        width: 100%;
+        margin-top: -3rem;
+    }
+
+    .a-card::before {
+        height: 100%;
+        width: 12rem;
+        top: 10px;
+        transform: translateX(30px);
+    }
+
+    .a-achievement {
+        text-align: left;
+    }
+
+    .a-img {
+        width: 10rem;
+        height: 10rem;
+        left: 5rem;
+    }
+}
+
+@media only screen and (max-width: 480px) {
 
     .a {
-        height: 100%;
         padding: 50px 0;
     }
 

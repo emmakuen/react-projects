@@ -1,6 +1,6 @@
 .i {
     display: flex;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .i-left {
@@ -74,10 +74,10 @@
     color: var(--primary);
 }
 
-@media screen and (max-width: 480px) {
+@media only screen and (max-width: 992px) {
     .i {
+        min-height: -webkit-fill-available;
         flex-direction: column;
-        height: 100%;
         text-align: center;
         position: relative;
         padding-top: 50px;
@@ -103,7 +103,11 @@
 
     .i-img {
         transform: translateX(8.5%);
+        max-width: 600px;
     }
+}
+
+@media screen and (max-width: 480px) {
 
     .i-intro {
         font-size: 3rem;

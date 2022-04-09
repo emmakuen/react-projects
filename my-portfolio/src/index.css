@@ -36,33 +36,32 @@
 }
 
 body::-webkit-scrollbar {
-  width: 1.5rem;
+  width: 1.2rem;
 }
 
 body::-webkit-scrollbar-track {
-  background-color: var(--background);
+  background-color: var(--gray-ghost);
 }
 
 body::-webkit-scrollbar-thumb {
   background: var(--secondary);
   border-radius: 50px;
-  border: var(--background) solid 5px;
 }
 
 body::-webkit-scrollbar-thumb:hover {
   background: var(--secondary);
 }
 
-.App {
-  padding: 0 15vmax;
-  padding-left: calc(15vmax + 5rem);
-  background-color: var(--background);
+#root {
+  padding: 0;
+  margin: 0;
 }
 
-@media only screen and (max-width: 600px) {
-  #root {
-    padding-left: 15vmax;
-  }
+.App {
+  padding: 0 15vw;
+  padding-left: calc(15vw + 5rem);
+  background-color: var(--background);
+  overflow-x: hidden;
 }
 
 p {
@@ -78,9 +77,65 @@ p {
   font-family: 'Architects Daughter', cursive;
 }
 
+@media only screen and (max-width: 1400px) {
+  .App {
+    padding: 0 7vw;
+    padding-left: calc(7vw + 5rem);
+  }
+}
+
+
+@media only screen and (max-width: 1200px) {
+  .App {
+    padding: 0 3vw;
+    padding-left: calc(3vw + 5rem);
+  }
+}
+
+
+@media only screen and (max-width: 992px) {
+
+  .i,
+  .c {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .a {
+    flex-direction: column-reverse;
+  }
+}
+
+
+/* Small Screen */
+@media (hover: none) and (pointer: coarse) {
+
+  #root {
+    padding: 0;
+    margin: 0;
+  }
+
+  .App {
+    padding: 0 3vw;
+    margin: 0;
+  }
+
+  .App {
+    padding: 3rem;
+  }
+}
+
+
 @media screen and (max-width: 480px) {
 
-  #root,
+  #root {
+    padding: 0;
+    margin: 0;
+  }
+
   .App {
     padding: 0;
     margin: 0;
@@ -91,7 +146,7 @@ p {
   }
 
   .i,
-  .c-wrapper {
+  .c {
     flex-direction: column;
   }
 

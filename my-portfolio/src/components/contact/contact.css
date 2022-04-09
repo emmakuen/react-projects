@@ -1,12 +1,10 @@
 .c {
-    height: 100vh;
-    position: relative;
-}
-
-.c-wrapper {
+    min-height: 100vh;
     display: flex;
     padding: 50px 0;
-    /* height: 100%; */
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
 }
 
 .c-left,
@@ -54,6 +52,7 @@
     padding: 7vmin;
     border-radius: 20px;
     color: var(--text);
+    max-width: 600px;
 }
 
 .c-desc {
@@ -134,10 +133,17 @@
     color: rgb(243, 73, 73);
 }
 
+@media screen and (max-width: 992px) {
+    .c-info {
+        display: none;
+    }
+}
+
 @media screen and (max-width: 480px) {
     .c {
-        height: 100%;
+        min-height: -webkit-fill-available;
         margin-top: 2rem;
+        flex-direction: column;
     }
 
     .c-left {
@@ -153,20 +159,18 @@
         height: 20px;
     }
 
-    .c-info {
-        gap: 0.5rem;
-        margin-bottom: 50px;
-    }
-
-    .c-info-item span {
-        font-size: 1rem;
-    }
-
     .c-form-container {
         margin-bottom: 80px;
     }
 
     .c-desc {
-        font-size: 1rem;
+        font-size: 0.8rem;
     }
+
+    .c form input,
+    .c form textarea,
+    .c form button {
+        padding: 0.5rem 1rem;
+    }
+
 }
