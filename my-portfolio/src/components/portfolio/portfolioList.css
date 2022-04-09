@@ -66,6 +66,10 @@
 
 
 @media screen and (max-width: 480px) {
+    .portfolio {
+        height: 100%;
+    }
+
     .pl-filters {
         gap: 1rem;
         margin-top: 1rem;
