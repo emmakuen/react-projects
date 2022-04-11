@@ -16,10 +16,12 @@ footer {
     height: 40px;
     width: 40px;
     opacity: 0.8;
+    transition: 0.5s ease;
 }
 
 .f-logo:hover {
     opacity: 1;
+    transform: scale(1.2);
 }
 
 .f-logo.bordered {
