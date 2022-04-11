@@ -2,7 +2,7 @@ import "./intro.css";
 import MouseScroll from "./MouseScroll";
 import { init } from "ityped";
 import { useEffect, useRef } from "react";
-import { typedTexts } from "./constants";
+import { typedTexts, introText } from "./data";
 
 const IntroSection = () => {
   const typedTextRef = useRef();
@@ -28,11 +28,7 @@ const IntroSection = () => {
           <h3 className="i-title">
             <span className="i-title-item" ref={typedTextRef}></span>
           </h3>
-          <p className="i-desc">
-            I design and develop services for customers of all sizes,
-            specializing in creating stylish, modern websites, web services and
-            online stores.
-          </p>
+          <p className="i-desc">{introText}</p>
         </div>
       </div>
       <div className="i-right">

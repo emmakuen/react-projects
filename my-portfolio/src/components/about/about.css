@@ -17,6 +17,15 @@
     align-items: center;
 }
 
+.a-right {
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
 
 .a-card {
     width: 100%;
@@ -47,20 +56,29 @@
 }
 
 .a-achievement {
-    margin-top: 50px;
+    margin-top: 30px;
     display: flex;
     gap: 25px;
 }
 
 .a-achievement-texts {
-    max-width: 300px;
+    max-width: 500px;
 }
 
 .a-achievement-title {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 500;
     color: var(--text);
     opacity: 0.8;
+}
+
+.a-achievement-period {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+.a-achievement-desc {
+    font-size: 0.85rem;
 }
 
 .a-achievement-img {
@@ -68,13 +86,36 @@
     border-radius: 10px;
 }
 
-.a-sub {
-    margin: 20px 0px;
-    max-width: 450px;
-}
-
 .a-desc {
     font-weight: 300;
+}
+
+.knowledge-title {
+    margin-top: 50px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--text);
+    opacity: 0.8;
+}
+
+.knowledge-bubbles {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.knowledge-item {
+    border-radius: 50px;
+    background-color: var(--gray-ghost);
+    padding: 2px 1rem;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.knowledge-item:hover {
+    background-color: var(--primary);
+    color: aliceblue;
 }
 
 @media only screen and (max-width: 800px) {

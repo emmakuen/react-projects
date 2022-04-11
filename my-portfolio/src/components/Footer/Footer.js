@@ -12,7 +12,7 @@ const Footer = () => {
       <div className="f-logos">
         <a
           aria-label="Go to Emma's Github profile"
-          href="https://leetcode.com/emmakuen/"
+          href="https://github.com/emmakuen/"
         >
           <GithubLogo className="f-logo" fill={primaryColor} />
         </a>
@@ -24,7 +24,7 @@ const Footer = () => {
         </a>
         <a
           aria-label="Go to Emma's LeetCode profile"
-          href="https://github.com/emmakuen"
+          href="https://leetcode.com/emmakuen"
         >
           <LeetCodeLogo className="f-logo bordered" />
         </a>

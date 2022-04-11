@@ -67,8 +67,8 @@ const ContactSection = () => {
       <div className="c-right">
         <div className="c-form-container">
           <p className="c-desc">
-            <strong>What's your story?</strong> Get in touch. Always open to
-            freelancing if the right project comes along.
+            <strong>Have any questions?</strong> Feel free to get in touch. I'd
+            love to create things with fun and open-minded people.
           </p>
           <form ref={formRef} onSubmit={handleSubmit}>
             <input
@@ -83,6 +83,7 @@ const ContactSection = () => {
               placeholder="Subject"
               name="subject"
               id="c-subject"
+              autoComplete="off"
             />
             <input
               type="email"
@@ -96,6 +97,7 @@ const ContactSection = () => {
               id="c-message"
               rows="5"
               placeholder="Message"
+              autoComplete="off"
             />
             <button disabled={isSending}>{buttonText}</button>
             {status !== STATUSES.hold && (

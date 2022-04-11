@@ -46,11 +46,11 @@ export const portfolios = [
     id: "web3",
     title: "Project title",
     subtitle: "Project Subtitle",
-    imgSrc: "/assets/images/portfolio/website3.jpg",
+    imgSrc: "/assets/images/portfolio/website3.png",
     explanation:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, rerum?",
     portfolioType: "web",
-    frameworks: ["Next.js", "Firebase"],
+    frameworks: ["Figma", "Webflow"],
   },
   {
     id: "design1",

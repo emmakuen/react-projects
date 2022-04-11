@@ -1,6 +1,6 @@
 import "./about.css";
 import Achievement from "./Achievement";
-
+import { data } from "./data";
 const AboutSection = () => {
   return (
     <section className="a" id="about">
@@ -11,22 +11,20 @@ const AboutSection = () => {
       </div>
       <div className="a-right">
         <div className="a-text">
-          <h2 className="title">About Me</h2>
-          <p className="a-sub">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti,
-            reprehenderit.
-          </p>
-          <p className="a-desc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi
-            magnam maxime consequatur tenetur dolor deserunt minima vitae quis
-            est. Voluptate at cum nam ad voluptatem mollitia quaerat.
-          </p>
+          <h2 className="title">{data.title}</h2>
+          <p className="a-desc">{data.description}</p>
         </div>
-        <Achievement
-          title="Yonsei University"
-          desc="Completed Master's Degree"
-        />
-        <Achievement title="DKBMC" desc="Developer and BI Consultant" />
+        {data.achievements.map((achievement) => (
+          <Achievement {...achievement} key={achievement.title} />
+        ))}
+        <h3 className="knowledge-title">I'm familiar with:</h3>
+        <div className="knowledge-bubbles">
+          {data.knowledge.map((item) => (
+            <div key={item} className="knowledge-item">
+              {item}
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
