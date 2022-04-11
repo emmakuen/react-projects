@@ -50,7 +50,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section className="c">
+    <section className="c" id="contact">
       <div className="c-left">
         <h2 className="title">Let's discuss your project</h2>
         <div className="c-info">

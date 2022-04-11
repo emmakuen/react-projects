@@ -3,7 +3,7 @@ import IntroSection from "./intro/IntroSection";
 import AboutSection from "./about/AboutSection";
 import PortfolioList from "./portfolio/PortfolioList";
 import ContactSection from "./contact/ContactSection";
-import Footer from "./Footer/Footer";
+import Footer from "./footer/Footer";
 import * as React from "react";
 import { useTheme } from "../contexts/useTheme";
 function App() {

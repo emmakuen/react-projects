@@ -14,7 +14,7 @@ const NavLink = ({ destination, children, text, onClick }) => {
     );
   return (
     <li className="nav-item">
-      <a href={`/#${destination}`} className="nav-link">
+      <a href={`#${destination}`} className="nav-link">
         {children}
         <span className="link-text">{text}</span>
       </a>

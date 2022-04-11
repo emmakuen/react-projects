@@ -3,7 +3,7 @@ import Achievement from "./Achievement";
 
 const AboutSection = () => {
   return (
-    <section className="a">
+    <section className="a" id="about">
       <div className="a-left">
         <div className="a-card">
           <img src="/assets/images/books.png" alt="" className="a-img" />

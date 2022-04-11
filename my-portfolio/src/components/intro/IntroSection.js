@@ -17,7 +17,7 @@ const IntroSection = () => {
   }, []);
 
   return (
-    <section className="i">
+    <section className="i" id="home">
       <div className="i-left">
         <div className="i-left-wrapper">
           <h2 className="i-intro">
