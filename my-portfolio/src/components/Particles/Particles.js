@@ -14,7 +14,7 @@ const ParticlesContainer = () => {
         },
       },
       color: {
-        value: theme === LIGHT ? lightTheme.secondary : darkTheme.text,
+        value: theme === LIGHT ? lightTheme.accent : darkTheme.accent,
       },
       shape: {
         type: "circle",
@@ -42,7 +42,7 @@ const ParticlesContainer = () => {
         },
       },
       size: {
-        value: 4,
+        value: 5,
         random: true,
         anim: {
           enable: false,

@@ -20,10 +20,10 @@ const IntroSection = () => {
     <section className="i" id="home">
       <div className="i-left">
         <div className="i-left-wrapper">
-          <h2 className="i-intro">
+          <h1 className="i-intro">
             Hello,
-            <br /> I'm <h1 className="i-name">Emma</h1>.
-          </h2>
+            <br /> I'm <span className="i-name">Emma</span>.
+          </h1>
 
           <h3 className="i-title">
             <span className="i-title-item" ref={typedTextRef}></span>

@@ -20,7 +20,7 @@
   --secondary: rgba(223, 102, 120, 0.4);
   --gray-primary: #888;
   --gray-secondary: rgba(255, 255, 252, 0.25);
-  --gray-gradient: linear-gradient(110deg, rgba(45, 42, 39, 0.7) 0%, rgba(223, 102, 120, 0.7) 100%);
+  --gray-gradient: linear-gradient(110deg, rgba(255, 255, 252, 0.7) 0%, rgba(223, 102, 120, 0.7) 100%);
   --gray-ghost: rgba(255, 255, 252, 0.1);
 }
 
