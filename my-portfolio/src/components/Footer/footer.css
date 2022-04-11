@@ -9,6 +9,7 @@ footer {
 .f-logos {
     display: flex;
     gap: 1rem;
+    z-index: 1;
 }
 
 .f-logo {
