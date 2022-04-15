@@ -68,13 +68,13 @@
 .a-achievement-title {
     font-size: 1rem;
     font-weight: 500;
-    color: var(--text);
-    opacity: 0.8;
+    color: var(--primary);
 }
 
 .a-achievement-period {
     font-size: 0.8rem;
-    opacity: 0.8;
+    color: var(--text);
+    opacity: 0.5;
 }
 
 .a-achievement-desc {

@@ -1,7 +1,8 @@
 import "./portfolioCard.css";
 
 const PortfolioCard = ({ portfolio }) => {
-  const { title, subtitle, explanation, imgSrc, frameworks } = portfolio;
+  const { title, subtitle, explanation, imgSrc, frameworks, url } = portfolio;
+
   return (
     <>
       <div className="pl-item">
@@ -20,9 +21,16 @@ const PortfolioCard = ({ portfolio }) => {
               <li key={framework}>{framework}</li>
             ))}
           </ul>
-          <a href="/" className="action-button">
-            View
-          </a>
+          {url && url !== "" && (
+            <a
+              href={url}
+              className="action-button"
+              target="_blank"
+              rel="noreferrer"
+            >
+              View
+            </a>
+          )}
         </div>
       </div>
     </>

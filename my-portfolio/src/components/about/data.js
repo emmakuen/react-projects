@@ -6,29 +6,27 @@ export const data = {
     {
       title: "Freelancer",
       where: "",
-      description:
-        "Design and develop websites, and create analytical dashboards.",
+      description: "Develop websites, and create analytical dashboards.",
       period: "2021 - Current",
     },
     {
       title: "BI Developer",
       where: "DKBMC",
       description:
-        "Developed analytical dashboards for Hyundai E&C and KT&G, took part in the development of the company BI Portal.",
+        "Developed analytical dashboards for Hyundai E&C and KT&G, took part in the development of company BI Portal.",
       period: "2020 - 2021",
     },
     {
       title: "Intern",
       where: "Eqstem",
       description:
-        "Participated in the development of the company website, created digital marketing content",
+        "Developed company website and created digital marketing content",
       period: "2019 - 2020",
     },
     {
       title: "MA of Global Finance",
       where: "Yonsei University",
-      description:
-        "Honor Student, Dean's List student, international student ambassador at Barun ICT Research Center",
+      description: "Honor Student, Dean's List student",
       period: "2017 - 2019",
     },
   ],
@@ -38,12 +36,12 @@ export const data = {
     "Tailwind",
     "JavaScript",
     "React",
+    "Tableau",
     "Python",
     "Webflow",
     "React Native",
-    "Flutter",
-    "Tableau",
     "Red Hat Enterprise Linux",
+    "Flutter",
     "Google Cloud",
   ],
 };

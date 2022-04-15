@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { motion, useMotionValue } from "framer-motion";
 import PortfolioCard from "./PortfolioCard";
 import PortfolioFilter from "./PortfolioFilter";
-import { portfolioTypes, portfolios } from "./constants";
+import { portfolioTypes, portfolios } from "./data";
 import "./portfolioList.css";
 
 const LEFT_END_ALL = -1725;
@@ -31,8 +31,8 @@ const PortfolioList = () => {
         : setLeft(LEFT_END_ALL_MOBILE);
       return;
     }
-    const filteredPortfolios = portfolios.filter(
-      (portfolio) => portfolio.portfolioType === selected
+    const filteredPortfolios = portfolios.filter((portfolio) =>
+      portfolio.portfolioType.includes(selected)
     );
     setSelectedPortfolios(filteredPortfolios);
     window.screen.width >= 500
