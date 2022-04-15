@@ -6,6 +6,14 @@
   box-sizing: border-box;
 }
 
+:root {
+  --text: #343a40;
+  --background: #fff;
+  --primary: #195f49;
+  --gray-primary: #677079;
+}
+
 body {
   font-family: 'Work Sans', sans-serif;
+  background-color: var(--background);
 }
