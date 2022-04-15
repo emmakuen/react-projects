@@ -4,10 +4,13 @@ import AccordionItem from "./AccordionItem";
 import styles from "./Accordion.module.css";
 
 const Accordion = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [activeId, setActiveId] = useState(1);
+  const handleClick = (id) => {
+    setActiveId(id);
+  };
   return (
     <ul className={styles.accordion}>
-      <AccordionItem />
+      <AccordionItem activeId={activeId} handleClick={handleClick} id={2} />
     </ul>
   );
 };

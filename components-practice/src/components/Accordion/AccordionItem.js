@@ -1,8 +1,13 @@
 import { ReactComponent as CaretUp } from "./svg/caret-up.svg";
+import { ReactComponent as CaretDown } from "./svg/caret-down.svg";
 import styles from "./Accordion.module.css";
-const AccordionItem = () => {
+const AccordionItem = ({ activeId, id, handleClick }) => {
+  const isActive = activeId === id;
+  const accordionStyles = isActive
+    ? styles.accordionItemActive
+    : styles.accordionItemInactive;
   return (
-    <li className={styles.accordionItem}>
+    <li className={accordionStyles}>
       <span className={styles.itemNumber}>01</span>
       <div className={styles.itemContent}>
         <h4 className={styles.title}>Lorem, ipsum dolor sit amet?</h4>
@@ -32,7 +37,11 @@ const AccordionItem = () => {
           </ul>
         </div>
       </div>
-      <CaretUp className={styles.caret} />
+      {isActive ? (
+        <CaretUp className={styles.caret} />
+      ) : (
+        <CaretDown className={styles.caret} />
+      )}
     </li>
   );
 };

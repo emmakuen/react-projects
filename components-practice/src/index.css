@@ -10,7 +10,8 @@
   --text: #343a40;
   --background: #fff;
   --primary: #195f49;
-  --gray-primary: #677079;
+  --gray-primary: rgba(103, 112, 121, 0.75);
+  --gray-secondary: rgba(103, 112, 121, 0.5);
 }
 
 body {
