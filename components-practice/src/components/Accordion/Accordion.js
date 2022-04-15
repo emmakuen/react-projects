@@ -4,15 +4,19 @@ import AccordionItem from "./AccordionItem";
 import styles from "./Accordion.module.css";
 
 const Accordion = () => {
-  const [activeId, setActiveId] = useState(1);
-  const handleClick = (id) => {
-    setActiveId(id);
+  const [activeId, setActiveId] = useState(null);
+  const renderItems = () => {
+    return data.map((item) => (
+      <AccordionItem
+        key={item.id}
+        activeId={activeId}
+        setActiveId={setActiveId}
+        {...item}
+      />
+    ));
   };
-  return (
-    <ul className={styles.accordion}>
-      <AccordionItem activeId={activeId} handleClick={handleClick} id={2} />
-    </ul>
-  );
+
+  return <ul className={styles.accordion}>{renderItems()}</ul>;
 };
 
 export default Accordion;

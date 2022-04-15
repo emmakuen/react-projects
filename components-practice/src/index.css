@@ -17,4 +17,7 @@
 body {
   font-family: 'Work Sans', sans-serif;
   background-color: var(--background);
+  width: 100vw;
+  min-height: 100vh;
+  padding: 2rem;
 }
