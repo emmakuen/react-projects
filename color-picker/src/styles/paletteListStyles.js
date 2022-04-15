@@ -44,11 +44,11 @@ const PaletteListStyles = {
     fontFamily: "'Fredoka One', cursive",
     background: "#fff",
     background:
-      "-webkit-linear-gradient(to right, #CF5959 0%, #E83C7B 25%, #667CE8  50%, #61BFC9 75%, #59AB44 100%)",
+      "-webkit-linear-gradient(to right, #CF5959 0%, #ff3C7B 25%, #667CE8  50%, #61BFC9 75%, #59AB44 100%)",
     background:
-      "-moz-linear-gradient(to right, #CF5959 0%, #E83C7B 25%, #667CE8  50%, #61BFC9 75%, #59AB44 100%)",
+      "-moz-linear-gradient(to right, #CF5959 0%, #ff3C7B 25%, #667CE8  50%, #61BFC9 75%, #59AB44 100%)",
     background:
-      "linear-gradient(to right, #CF5959 0%, #E83C7B 25%, #667CE8  50%, #61BFC9 75%, #59AB44 100%)",
+      "linear-gradient(to right, #CF5959 0%, #ff3C7B 25%, #667CE8  50%, #61BFC9 75%, #59AB44 100%)",
     "-webkit-background-clip": "text",
     "-webkit-text-fill-color": "transparent",
   },
