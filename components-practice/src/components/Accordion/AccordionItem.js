@@ -5,10 +5,7 @@ const AccordionItem = () => {
     <li className={styles.accordionItem}>
       <span className={styles.itemNumber}>01</span>
       <div className={styles.itemContent}>
-        <div className={styles.titleContainer}>
-          <h4 className={styles.title}>Lorem, ipsum dolor sit amet?</h4>
-          <CaretUp height={50} width={50} className={styles.caret} />
-        </div>
+        <h4 className={styles.title}>Lorem, ipsum dolor sit amet?</h4>
         <div className={styles.textbox}>
           <p className={styles.text}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Non
@@ -35,6 +32,7 @@ const AccordionItem = () => {
           </ul>
         </div>
       </div>
+      <CaretUp className={styles.caret} />
     </li>
   );
 };
