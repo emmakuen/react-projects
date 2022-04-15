@@ -49,6 +49,7 @@
     font-size: 28px;
     font-weight: 600;
     color: var(--primary);
+    transition: 0.5s ease;
 }
 
 .accordionItemInactive .title {

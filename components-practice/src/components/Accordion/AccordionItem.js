@@ -23,18 +23,6 @@ const AccordionItem = (props) => {
           <ul className={styles.textList}>
             {details &&
               details.map((detail) => <li key={detail.id}>{detail.text}</li>)}
-            <li>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum,
-              totam!
-            </li>
-            <li>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum,
-              totam!
-            </li>
-            <li>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum,
-              totam!
-            </li>
           </ul>
         </div>
       </div>
