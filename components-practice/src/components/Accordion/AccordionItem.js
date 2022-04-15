@@ -16,21 +16,19 @@ const AccordionItem = (props) => {
   return (
     <li className={accordionStyles} onClick={onClick}>
       <span className={styles.itemNumber}>{makeTwoDigits(id)}</span>
-      <div className={styles.itemContent}>
-        <h4 className={styles.title}>{title}</h4>
-        <div className={styles.textbox}>
-          <p className={styles.text}>{text}</p>
-          <ul className={styles.textList}>
-            {details &&
-              details.map((detail) => <li key={detail.id}>{detail.text}</li>)}
-          </ul>
-        </div>
-      </div>
+      <h4 className={styles.title}>{title}</h4>
       {isActive ? (
-        <CaretUp className={styles.caret} />
+        <CaretUp className={styles.caretActive} />
       ) : (
-        <CaretDown className={styles.caret} />
+        <CaretDown className={styles.caretInactive} />
       )}
+      <div className={styles.textbox}>
+        <p className={styles.text}>{text}</p>
+        <ul className={styles.details}>
+          {details &&
+            details.map((detail) => <li key={detail.id}>{detail.text}</li>)}
+        </ul>
+      </div>
     </li>
   );
 };
