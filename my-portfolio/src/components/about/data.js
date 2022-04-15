@@ -35,6 +35,7 @@ export const data = {
   knowledge: [
     "HTML",
     "CSS",
+    "Tailwind",
     "JavaScript",
     "React",
     "Python",
