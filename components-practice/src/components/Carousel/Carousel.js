@@ -9,7 +9,6 @@ const Carousel = () => {
   const { currentIdx, decrement, increment, setCurrentIdx } = useCarousel(data);
 
   const translateX = currentIdx * CAROUSEL_ITEM_WIDTH;
-  console.log(translateX);
 
   const style = { transform: `translateX(${translateX}%)` };
 

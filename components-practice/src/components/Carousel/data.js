@@ -20,7 +20,7 @@ export const data = [
     imgSrc: "/assets/img/carousel/person3.jpg",
     review:
       '"Cupiditate voluptate eius, saepe officiis velit quod hic debitis harum ex nulla ipsam praesentium animi minus expedita tenetur delectus? Inventore, voluptatibus id, minus quidem iusto corrupti voluptates impedit fugiat sapiente reprehenderit cum."',
-    reviewer: "John Wick",
-    reviewerTitle: "Developer at Amazon",
+    reviewer: "Julia Doe",
+    reviewerTitle: "Marketing Manager at Tesla",
   },
 ];
