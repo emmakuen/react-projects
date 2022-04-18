@@ -11,10 +11,10 @@ const CarouselItem = () => {
       />
       <figure>
         <blockquote>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt
-          labore dolorum neque officia ut aliquid dolorem eaque ipsam dolores
-          numquam. Inventore hic omnis distinctio asperiores amet ab porro
-          quibusdam harum!
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab facere
+          error modi, natus in sit repudiandae, impedit, obcaecati recusandae
+          vitae perspiciatis voluptas quia itaque ducimus minus cum et amet
+          tempore qui.
         </blockquote>
         <figcaption>
           <p>Maria de Almeida</p>

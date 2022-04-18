@@ -12,7 +12,10 @@ const Carousel = () => {
         <CarouselItem />
         <ArrowRight />
       </div>
-      <div className="carousel-dot" />
+      <div className="carousel-dots">
+        <div className="active"></div>
+        <div></div>
+      </div>
     </div>
   );
 };

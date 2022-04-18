@@ -7,6 +7,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 .carousel {
@@ -26,6 +27,7 @@
     padding: 10px;
     border-radius: 50px;
     filter: drop-shadow(0px 0px 10px #00000038);
+    cursor: pointer;
 }
 
 .carousel-button.left {
@@ -75,8 +77,24 @@
     gap: 8px;
 }
 
-.carousel-dot {
-    grid-column: span 3;
-    height: 10px;
-    background-color: red;
+.carousel-dots {
+    width: 100%;
+    position: absolute;
+    bottom: -4rem;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.carousel-dots div {
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    border-radius: 50px;
+    border: 2px solid var(--primary);
+    cursor: pointer;
+}
+
+.carousel-dots div.active {
+    background-color: var(--primary);
 }
