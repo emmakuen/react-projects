@@ -31,11 +31,13 @@ const Carousel = () => {
       </button>
       <div className="carousel-dots">
         {data.map((item, idx) => (
-          <div
+          <button
             key={item.key}
             className={`${idx === currentIdx ? "active" : ""}`}
             onClick={() => setCurrentIdx(idx)}
-          ></div>
+          >
+            &nbsp;
+          </button>
         ))}
       </div>
     </div>
