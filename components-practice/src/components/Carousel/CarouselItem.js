@@ -5,7 +5,7 @@ const CarouselItem = (props) => {
   const { imgSrc, review, reviewer, reviewerTitle } = props;
   return (
     <div className="carousel-item">
-      <img src={imgSrc} alt="" className="carousel-image" />
+      <img src={imgSrc} alt={reviewer} className="carousel-image" />
       <figure>
         <blockquote>{review}</blockquote>
         <figcaption>
