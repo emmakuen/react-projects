@@ -1,6 +1,6 @@
 .carousel-box {
-    max-width: 900px;
-    max-height: 300px;
+    width: 900px;
+    height: 300px;
     margin-top: 2rem;
     background-color: var(--primary);
     border-radius: 10px;
