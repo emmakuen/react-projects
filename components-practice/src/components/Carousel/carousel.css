@@ -20,6 +20,8 @@
     width: 100%;
     display: flex;
     gap: 5%;
+    transform: translateX(0);
+    transition: 1s ease;
 }
 
 .carousel-button {
