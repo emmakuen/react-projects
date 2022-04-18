@@ -1,22 +1,25 @@
 .carousel-box {
-    max-width: 800px;
+    max-width: 900px;
     max-height: 300px;
     margin-top: 2rem;
     background-color: var(--primary);
     border-radius: 10px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     position: relative;
 }
 
 .carousel {
     width: 100%;
-    color: var(--background);
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    justify-content: center;
-    align-items: center;
+    padding: 25px;
+    overflow: hidden;
+}
+
+.carousel-item-container {
+    width: 100%;
+    display: flex;
+    gap: 5%;
 }
 
 .carousel-button {
@@ -41,8 +44,9 @@
 .carousel-item {
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: auto 1fr;
     gap: 2rem;
+    flex-shrink: 0;
 }
 
 .carousel-image {
@@ -51,10 +55,11 @@
     align-self: center;
     object-fit: cover;
     border-radius: 20px;
-
+    filter: drop-shadow(0px 0px 10px #00000038);
 }
 
 .carousel-item figure {
+    color: var(--background);
     display: flex;
     flex-direction: column;
     text-align: start;
