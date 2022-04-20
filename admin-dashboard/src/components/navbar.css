@@ -46,6 +46,13 @@
 .navIcon {
     height: 20px !important;
     cursor: pointer;
+    transform: scale(1);
+    transition: 0.2s ease;
+}
+
+.navIcon:hover {
+    fill: var(--text);
+    transform: scale(1.1);
 }
 
 .navIconBadge {
