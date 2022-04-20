@@ -6,6 +6,16 @@
   box-sizing: border-box;
 }
 
+:root {
+  --text: rgba(0, 0, 24, 1);
+  --background: rgba(255, 255, 255, 1);
+  --primary: #189AB4;
+  --accent: #75E6DA;
+  --red: #e63946;
+  --gray: #4b515a;
+}
+
 body {
   font-family: 'Noto Sans', sans-serif;
+  background-color: var(--background);
 }
