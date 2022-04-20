@@ -1,13 +1,16 @@
 import "./App.css";
 import Navbar from "./Navbar";
-import Sidebar from "./Sidebar";
+import Sidebar from "./Sidebar/Sidebar";
+import Home from "../pages/Home";
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <Navbar />
-      <Sidebar />
-      other stuff
+      <div className="appContainer">
+        <Sidebar />
+        <Home />
+      </div>
     </div>
   );
 }
