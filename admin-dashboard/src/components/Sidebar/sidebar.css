@@ -16,7 +16,7 @@
 .sidebarItem {
     color: var(--gray-secondary);
     font-weight: 600;
-    font-size: 12px;
+    font-size: 14px;
     display: flex;
     align-items: center;
     gap: var(--gap);

@@ -44,7 +44,7 @@
 }
 
 .navIcon {
-    height: 20px !important;
+    height: 30px !important;
     cursor: pointer;
     transform: scale(1);
     transition: 0.2s ease;
@@ -76,4 +76,10 @@
     cursor: pointer;
     border-radius: 50%;
     object-fit: cover;
+    transform: scale(1);
+    transition: 0.2s ease;
+}
+
+.navAvatar:hover {
+    transform: scale(1.1);
 }

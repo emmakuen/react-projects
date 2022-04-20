@@ -7,33 +7,33 @@
 
 .featuredItem {
     box-shadow: var(--shadow);
-    padding: 20px;
+    padding: 30px 20px;
     flex: 1 1 100px;
+    max-width: 300px;
     border-radius: 14px;
     background-color: var(--white);
     text-align: center;
 }
 
 .featuredTitle {
-    color: var(--text);
+    color: var(--gray);
     font-weight: 800;
     letter-spacing: -0.5px;
-    text-transform: uppercase;
-    font-size: 12px;
-    margin-bottom: 12px;
+    font-size: 1rem;
+    margin-bottom: 5px;
 }
 
 
 .featuredStat {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 600;
     color: var(--text);
 }
 
 
 .featuredChange {
-    padding-top: 5px;
-    font-size: 12px;
+    padding-top: 12px;
+    font-size: 14px;
 }
 
 .featuredArrow {
@@ -51,4 +51,20 @@
 .featuredChange.down,
 .featuredArrow.down {
     color: var(--red);
+}
+
+.featuredItem .featuredIcon {
+    background-color: var(--primary);
+    height: 50px !important;
+    width: 50px !important;
+    fill: var(--background) !important;
+    padding: 10px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    transform: scale(1);
+    transition: 0.2s ease;
+}
+
+.featuredItem:hover .featuredIcon {
+    transform: scale(1.1);
 }
