@@ -13,24 +13,32 @@ const Footer = () => {
         <a
           aria-label="Go to Emma's Github profile"
           href="https://github.com/emmakuen/"
+          target="_blank"
+          rel="noreferrer"
         >
           <GithubLogo className="f-logo" fill={primaryColor} />
         </a>
         <a
           aria-label="Go to Emma's Twitter profile"
           href="https://twitter.com/Enkusshi"
+          target="_blank"
+          rel="noreferrer"
         >
           <TwitterLogo className="f-logo" fill={primaryColor} />
         </a>
         <a
           aria-label="Go to Emma's LeetCode profile"
           href="https://leetcode.com/emmakuen"
+          target="_blank"
+          rel="noreferrer"
         >
           <LeetCodeLogo className="f-logo bordered" />
         </a>
         <a
           aria-label="Go to Emma's Tableau Public profile"
           href="https://public.tableau.com/app/profile/kushie"
+          target="_blank"
+          rel="noreferrer"
         >
           <TableauLogo className="f-logo bordered" />
         </a>
