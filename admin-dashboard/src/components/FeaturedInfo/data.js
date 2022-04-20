@@ -11,15 +11,22 @@ export const data = [
   {
     id: 2,
     name: "Tickets",
-    amount: 14,
+    amount: 34,
     change: -0.121,
     icon: <ConfirmationNumber className="featuredIcon" />,
   },
   {
     id: 3,
+    name: "Resolved",
+    amount: 45,
+    change: 1.313,
+    icon: <Group className="featuredIcon" />,
+  },
+  {
+    id: 3,
     name: "Contributors",
     amount: 10,
-    change: 1.213,
+    change: 1.2,
     icon: <Group className="featuredIcon" />,
   },
 ];

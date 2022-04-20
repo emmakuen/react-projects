@@ -1,7 +1,6 @@
 .featured {
     display: flex;
     justify-content: space-between;
-    max-width: 1000px;
     gap: 40px;
 }
 
@@ -9,7 +8,6 @@
     box-shadow: var(--shadow);
     padding: 30px 20px;
     flex: 1 1 100px;
-    max-width: 300px;
     border-radius: 14px;
     background-color: var(--white);
     text-align: center;

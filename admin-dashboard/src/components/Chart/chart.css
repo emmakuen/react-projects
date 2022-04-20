@@ -1,0 +1,11 @@
+.chart {
+    margin-top: 30px;
+    padding: 40px;
+    background-color: var(--white);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+.chartTitle {
+    margin-bottom: 20px;
+}
