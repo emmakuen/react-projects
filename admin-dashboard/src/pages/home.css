@@ -2,3 +2,9 @@
     flex: 4;
     padding: 20px;
 }
+
+.homeWidgets {
+    display: flex;
+    margin-top: 30px;
+    gap: 40px;
+}

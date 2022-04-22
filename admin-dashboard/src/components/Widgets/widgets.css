@@ -1,0 +1,96 @@
+.widgetSm {
+    flex: 1;
+}
+
+.widgetLg {
+    flex: 2;
+}
+
+.widgetLg,
+.widgetSm {
+    box-shadow: var(--shadow);
+    background-color: var(--white);
+    padding: var(--box-padding);
+    border-radius: var(--box-radius);
+}
+
+.widgetSmTitle {
+    margin-bottom: 20px;
+}
+
+.widgetSmList {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.widgetSmListItem {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.widgetSmItemInfo {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 10px;
+}
+
+.widgetSmImg {
+    border-radius: 12px;
+    height: 40px;
+    width: 40px;
+    object-fit: cover;
+    grid-row: 1/span 2;
+}
+
+.widgetSmItemName {
+    font-weight: 600;
+}
+
+.widgetSmItemType {
+    color: var(--gray);
+    font-size: 14px;
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.widgetSmButton {
+    outline: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    color: var(--white);
+    background-color: var(--gray-secondary);
+    padding: 6px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.widgetSmButton:hover {
+    background-color: var(--primary);
+}
+
+.widgetSmIcon {
+    height: 17px !important;
+}
+
+.widgetSmItemLine {
+    height: 1px;
+    background-color: var(--gray-secondary);
+    opacity: 0.4;
+}
+
+.widgetSmListTitles {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    text-transform: uppercase;
+    font-size: 12px;
+
+}

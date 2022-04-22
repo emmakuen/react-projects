@@ -6,9 +6,9 @@
 
 .featuredItem {
     box-shadow: var(--shadow);
-    padding: 30px 20px;
+    padding: var(--box-padding);
     flex: 1 1 100px;
-    border-radius: 14px;
+    border-radius: var(--box-radius);
     background-color: var(--white);
     text-align: center;
 }
@@ -57,7 +57,7 @@
     width: 50px !important;
     fill: var(--background) !important;
     padding: 10px;
-    border-radius: 12px;
+    border-radius: var(--box-radius);
     margin-bottom: 20px;
     transform: scale(1);
     transition: 0.2s ease;
