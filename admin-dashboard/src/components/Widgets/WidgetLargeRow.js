@@ -1,25 +1,36 @@
 import React from "react";
 import "./widgets.css";
+import {
+  getContributorImagesByIds,
+  getContributorNamesByIds,
+} from "../../helpers/dataHelpers";
 
-export default function WidgetLargeRow() {
+export default function WidgetLargeRow(props) {
+  const { name, status, severity, assigneeIds } = props;
+  const imgs = getContributorImagesByIds(assigneeIds);
+  const assigneeNames = getContributorNamesByIds(assigneeIds);
   return (
     <tr className="widgetLgTr">
-      <td className="widgetLgName">Page not found</td>
+      <td className="widgetLgName">{name}</td>
       <td className="widgetLgContributors">
-        <img
-          src="https://images.unsplash.com/photo-1649174778814-eb25702b6b0f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80"
-          alt=""
-        />
-        <img
-          src="https://images.unsplash.com/photo-1649174778814-eb25702b6b0f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80"
-          alt=""
-        />
+        {imgs &&
+          imgs.map((imgUrl, idx) => (
+            <img src={imgUrl} alt={assigneeNames[idx]} key={assigneeIds[idx]} />
+          ))}
       </td>
       <td>
-        <span className={`widgetLgDetail ${"high"}`}>Critical</span>
+        <span
+          className={`widgetLgDetail ${severity ? severity.toLowerCase() : ""}`}
+        >
+          {severity}
+        </span>
       </td>
       <td>
-        <span className={`widgetLgStatus ${"resolved"}`}>Resolved</span>
+        <span
+          className={`widgetLgStatus ${status ? status.toLowerCase() : ""}`}
+        >
+          {status}
+        </span>
       </td>
     </tr>
   );

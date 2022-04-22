@@ -1,5 +1,6 @@
 import "./widgets.css";
 import WidgetLargeRow from "./WidgetLargeRow";
+import { tickets } from "../../data/ticketsData";
 
 export default function WidgetLarge() {
   return (
@@ -15,16 +16,9 @@ export default function WidgetLarge() {
           </tr>
         </thead>
         <tbody>
-          <WidgetLargeRow />
-          <WidgetLargeRow />
-          <WidgetLargeRow />
-          <WidgetLargeRow />
-          <WidgetLargeRow />
-          <WidgetLargeRow />
-          <WidgetLargeRow />
-          <WidgetLargeRow />
-          <WidgetLargeRow />
-          <WidgetLargeRow />
+          {tickets.map((ticket) => (
+            <WidgetLargeRow key={ticket.id} {...ticket} />
+          ))}
         </tbody>
       </table>
     </div>

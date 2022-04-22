@@ -27,4 +27,11 @@ export const contributors = [
     imgUrl:
       "https://images.unsplash.com/photo-1649416170564-6f28f23f5aee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
   },
+  {
+    id: 5,
+    name: "Angela Stewards",
+    title: "Front-End Developer",
+    imgUrl:
+      "https://images.unsplash.com/photo-1648920729634-96d50fae6207?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=685&q=80",
+  },
 ];
