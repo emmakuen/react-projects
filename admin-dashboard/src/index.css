@@ -15,7 +15,8 @@
   --red: #e63946;
   --orange: #f4a261;
   --gray: #718096;
-  --gray-secondary: #A0AEC0;
+  --gray-secondary: #8d9eb3;
+  --gray-tertiary: #becbdd;
   --gray-ghost: #a0aec03d;
   --shadow: 0px 3.5px 5.5px rgba(0, 0, 0, 0.03);
   --gap: 12px;
@@ -32,7 +33,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--gray-secondary);
+  background-color: var(--gray-tertiary);
   border-radius: 50px;
 
 }
