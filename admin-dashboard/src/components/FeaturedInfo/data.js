@@ -23,7 +23,7 @@ export const data = [
     icon: <Group className="featuredIcon" />,
   },
   {
-    id: 3,
+    id: 4,
     name: "Contributors",
     amount: 10,
     change: 1.2,

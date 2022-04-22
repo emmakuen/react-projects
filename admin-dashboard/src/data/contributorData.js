@@ -7,21 +7,21 @@ export const contributors = [
       "https://images.unsplash.com/photo-1649817691459-cf2da24120a3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
   },
   {
-    id: 1,
+    id: 2,
     name: "Jan Pedro",
     title: "API Developer",
     imgUrl:
       "https://images.unsplash.com/photo-1648978147703-589308311049?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
   },
   {
-    id: 1,
+    id: 3,
     name: "Andy Zaeb",
     title: "Front-End Developer",
     imgUrl:
       "https://images.unsplash.com/photo-1649174778814-eb25702b6b0f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80",
   },
   {
-    id: 1,
+    id: 4,
     name: "Lisa Steels",
     title: "UX Designer",
     imgUrl:
