@@ -1,0 +1,10 @@
+.tickets {
+    flex: 4;
+    padding: 20px;
+}
+
+.ticketsWidgets {
+    display: flex;
+    margin-top: 30px;
+    gap: 40px;
+}
