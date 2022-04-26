@@ -1,10 +1,10 @@
-const severityLevels = {
+export const severityLevels = {
   medium: "Medium",
   high: "High",
   low: "Low",
 };
 
-const statuses = {
+export const statuses = {
   todo: "To do",
   inProgress: "In Progress",
   tobeTested: "To be Tested",
