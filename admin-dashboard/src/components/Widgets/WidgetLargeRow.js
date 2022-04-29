@@ -1,6 +1,7 @@
 import React from "react";
 import "./widgets.css";
 import ContributorImages from "../common/ContributorImages";
+import PriorityBubble from "../common/PriorityBubble";
 
 export default function WidgetLargeRow(props) {
   const { name, status, severity, assigneeIds } = props;
@@ -11,11 +12,7 @@ export default function WidgetLargeRow(props) {
         <ContributorImages ids={assigneeIds} />
       </td>
       <td>
-        <span
-          className={`widgetLgDetail ${severity ? severity.toLowerCase() : ""}`}
-        >
-          {severity}
-        </span>
+        <PriorityBubble severity={severity} />
       </td>
       <td>
         <span

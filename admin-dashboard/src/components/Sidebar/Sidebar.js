@@ -1,12 +1,4 @@
 import "./sidebar.css";
-import {
-  Dashboard,
-  Timeline,
-  ConfirmationNumber,
-  Group,
-  Apartment,
-  GroupWork,
-} from "@material-ui/icons";
 import SidebarItem from "./SidebarItem";
 import { routes } from "../../constants/routes";
 
