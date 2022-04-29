@@ -2,8 +2,14 @@ import "./ticketList.css";
 import { EditOutlined, DeleteOutline } from "@material-ui/icons";
 import { Link } from "react-router-dom";
 import { routes } from "../../constants/routes";
+import {
+  getContributorImagesByIds,
+  getContributorNamesByIds,
+} from "../../helpers/dataHelpers";
 
-const handleDelete = (id) => {};
+const handleDelete = (params) => {
+  console.log(params);
+};
 const ROW_WIDTH_SMALL = 160;
 const ROW_WIDTH_AVG = 200;
 const ROW_WIDTH_LARGE = 250;
@@ -25,8 +31,17 @@ export const columns = [
   {
     field: "assignees",
     headerName: "Assignees",
-    type: "assignees",
     width: ROW_WIDTH_AVG,
+    renderCell: (params) => {
+      const imageUrls = getContributorImagesByIds(params.row.assigneeIds);
+      return (
+        <div>
+          {imageUrls.map((url) => (
+            <img key={url} src={url} alt={url} />
+          ))}
+        </div>
+      );
+    },
   },
   {
     field: "actions",
@@ -42,7 +57,7 @@ export const columns = [
               <EditOutlined className="dg-green" />
             </button>
           </Link>
-          <button className="dg-button">
+          <button className="dg-button" onClick={() => handleDelete(params)}>
             <DeleteOutline className="dg-red" />
           </button>
         </>

@@ -5,6 +5,7 @@ import { DataGrid } from "@mui/x-data-grid";
 import { tickets } from "../../data/ticketsData";
 
 export default function TicketList() {
+  const [isOpen, setIsOpen] = React.useState(false);
   return (
     <div style={{ height: "90%", width: "100%" }}>
       <DataGrid
@@ -13,6 +14,7 @@ export default function TicketList() {
         pageSize={15}
         rowsPerPageOptions={[5]}
         checkboxSelection
+        isOpen={isOpen}
       />
     </div>
   );

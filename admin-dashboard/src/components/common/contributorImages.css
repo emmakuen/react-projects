@@ -1,0 +1,11 @@
+.contributor-imgs img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--white);
+}
+
+.contributor-imgs img:not(:first-child) {
+    margin-left: -20px;
+}
