@@ -2,10 +2,7 @@ import "./ticketList.css";
 import { EditOutlined, DeleteOutline } from "@material-ui/icons";
 import { Link } from "react-router-dom";
 import { routes } from "../../constants/routes";
-import {
-  getContributorImagesByIds,
-  getContributorNamesByIds,
-} from "../../helpers/dataHelpers";
+import ContributorImages from "../common/ContributorImages";
 
 const handleDelete = (params) => {
   console.log(params);
@@ -33,14 +30,7 @@ export const columns = [
     headerName: "Assignees",
     width: ROW_WIDTH_AVG,
     renderCell: (params) => {
-      const imageUrls = getContributorImagesByIds(params.row.assigneeIds);
-      return (
-        <div>
-          {imageUrls.map((url) => (
-            <img key={url} src={url} alt={url} />
-          ))}
-        </div>
-      );
+      return <ContributorImages ids={params.row.assigneeIds} />;
     },
   },
   {
