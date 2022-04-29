@@ -3,6 +3,7 @@ import { EditOutlined, DeleteOutline } from "@material-ui/icons";
 import { Link } from "react-router-dom";
 import { routes } from "../../constants/routes";
 import ContributorImages from "../common/ContributorImages";
+import PriorityBubble from "../common/PriorityBubble";
 
 const handleDelete = (params) => {
   console.log(params);
@@ -13,12 +14,15 @@ const ROW_WIDTH_LARGE = 250;
 
 export const columns = [
   { field: "id", headerName: "ID", width: 70 },
-  { field: "projectName", headerName: "Project", width: ROW_WIDTH_SMALL },
+  { field: "projectName", headerName: "Project", width: ROW_WIDTH_AVG },
   { field: "name", headerName: "Ticket", width: ROW_WIDTH_LARGE },
   {
     field: "severity",
     headerName: "Severity",
     width: ROW_WIDTH_SMALL,
+    renderCell: (params) => {
+      return <PriorityBubble severity={params.row.severity} />;
+    },
   },
   {
     field: "status",
