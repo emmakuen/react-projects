@@ -8,32 +8,25 @@ import {
   GroupWork,
 } from "@material-ui/icons";
 import SidebarItem from "./SidebarItem";
+import { routes } from "../../constants/routes";
 
 export default function Sidebar() {
   return (
     <div className="sidebar">
       <ul className="sidebarList">
-        <SidebarItem title="Dashboard">
-          <Dashboard />
-        </SidebarItem>
-        <SidebarItem title="Analytics" isActive={true}>
-          <Timeline />
-        </SidebarItem>
-        <SidebarItem title="Tickets">
-          <ConfirmationNumber />
-        </SidebarItem>
+        {Object.keys(routes)
+          .slice(0, 3)
+          .map((key) => (
+            <SidebarItem key={key} {...routes[key]} />
+          ))}
       </ul>
       <h3 className="sidebarListTitle">MANAGE</h3>
       <ul className="sidebarList">
-        <SidebarItem title="Projects">
-          <Apartment />
-        </SidebarItem>
-        <SidebarItem title="Teams">
-          <GroupWork />
-        </SidebarItem>
-        <SidebarItem title="Users">
-          <Group />
-        </SidebarItem>
+        {Object.keys(routes)
+          .slice(3)
+          .map((key) => (
+            <SidebarItem key={key} {...routes[key]} />
+          ))}
       </ul>
     </div>
   );

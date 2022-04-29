@@ -1,10 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-export default function SidebarItem({ title, children, isActive }) {
+export default function SidebarItem({ path, icon, name, isActive }) {
   return (
-    <li className={`sidebarItem${isActive ? " active" : ""}`}>
-      {children}
-      {title}
-    </li>
+    <Link to={path} className="sidebarItemLink">
+      <li className={`sidebarItem${isActive ? " active" : ""}`}>
+        {icon}
+        {name}
+      </li>
+    </Link>
   );
 }

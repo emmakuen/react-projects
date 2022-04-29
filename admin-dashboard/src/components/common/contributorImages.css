@@ -4,6 +4,12 @@
     object-fit: cover;
     border-radius: 50%;
     border: 3px solid var(--white);
+    transform: scale(1);
+    transition: 0.3s ease;
+}
+
+.contributor-imgs img:hover {
+    transform: scale(1.1);
 }
 
 .contributor-imgs img:not(:first-child) {
