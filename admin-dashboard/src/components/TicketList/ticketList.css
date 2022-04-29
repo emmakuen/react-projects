@@ -1,0 +1,24 @@
+.dg-green {
+    fill: var(--primary) !important;
+}
+
+.dg-red {
+    fill: var(--red) !important;
+}
+
+.dg-button {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    margin: 0 2px;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+.dg-button:hover {
+    background-color: var(--gray-ghost);
+}
