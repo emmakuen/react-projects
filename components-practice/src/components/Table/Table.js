@@ -34,8 +34,10 @@ export default function Table() {
   return (
     <table className="table">
       <thead className="t-header">
-        <th className="t-header cell">Chair</th>
-        {renderHeaders()}
+        <tr>
+          <th className="t-header cell">Chair</th>
+          {renderHeaders()}
+        </tr>
       </thead>
       {renderBody()}
     </table>
