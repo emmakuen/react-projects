@@ -15,13 +15,10 @@ export default function Table() {
     return (
       <tbody>
         {keys.map((key, index) => (
-          <tr
-            key={key}
-            className={`t-row${index % 2 !== 0 ? " gray" : " dark-gray"}`}
-          >
+          <tr key={key} className="t-row">
             <th className="t-row-header cell">{rowHeaders[key]}</th>
             {chairs.map((chair) => (
-              <td key={chair.id} className="t-row cell">
+              <td key={chair.id} className="cell">
                 {chair[key]} {rowUnits[key]}
               </td>
             ))}

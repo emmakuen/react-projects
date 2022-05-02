@@ -4,7 +4,7 @@
     border-collapse: collapse;
 }
 
-.cell {
+.table .cell {
     padding: 15px;
     text-align: left;
 }
@@ -20,10 +20,10 @@
     color: var(--background);
 }
 
-.t-row.dark-gray {
+.t-row:nth-child(odd) {
     background-color: var(--gray-ghost);
 }
 
-.t-row.gray {
+.t-row:nth-child(even) {
     background-color: var(--gray-tertiary);
 }
