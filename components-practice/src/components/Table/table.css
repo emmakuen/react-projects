@@ -1,0 +1,33 @@
+.table {
+    width: 90%;
+    max-width: 800px;
+    border-collapse: collapse;
+}
+
+.cell {
+    padding: 15px;
+    text-align: left;
+}
+
+.t-row-header,
+.t-column-header {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.t-row-header {
+    padding-right: 50px;
+}
+
+.t-header {
+    background-color: var(--primary);
+    color: var(--background);
+}
+
+.t-row.dark-gray {
+    background-color: var(--gray-ghost);
+}
+
+.t-row.gray {
+    background-color: var(--gray-tertiary);
+}

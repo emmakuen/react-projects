@@ -5,6 +5,13 @@ export const rowHeaders = {
   weightKg: "Weight",
 };
 
+export const rowUnits = {
+  widthCm: "cm",
+  heightCm: "cm",
+  depthCm: "cm",
+  weightKg: "kg",
+};
+
 export const chairs = [
   {
     id: 1,
