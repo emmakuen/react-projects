@@ -19,7 +19,7 @@ export default function Table() {
             key={key}
             className={`t-row${index % 2 !== 0 ? " gray" : " dark-gray"}`}
           >
-            <td className="t-row-header cell">{rowHeaders[key]}</td>
+            <th className="t-row-header cell">{rowHeaders[key]}</th>
             {chairs.map((chair) => (
               <td key={chair.id} className="t-row cell">
                 {chair[key]} {rowUnits[key]}
