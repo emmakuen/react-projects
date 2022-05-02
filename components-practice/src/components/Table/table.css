@@ -14,11 +14,8 @@
     font-size: 1.1rem;
 }
 
-.t-row-header {
-    padding-right: 50px;
-}
-
-.t-header {
+.t-header.cell {
+    width: 25%;
     background-color: var(--primary);
     color: var(--background);
 }
