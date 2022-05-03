@@ -1,0 +1,43 @@
+.pagination {
+    display: flex;
+    width: 90%;
+    max-width: 800px;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+
+
+.arrow-btn {
+    fill: var(--primary);
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 1px solid var(--primary);
+    background-color: var(--background);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.arrow-btn svg {
+    height: 60%;
+}
+
+.pagination .page {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.pagination .page.active {
+    color: var(--background);
+    background-color: var(--primary);
+}

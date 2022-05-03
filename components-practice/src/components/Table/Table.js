@@ -14,7 +14,7 @@ export default function Table() {
     const keys = Object.keys(chairs[0]).slice(2);
     return (
       <tbody>
-        {keys.map((key, index) => (
+        {keys.map((key) => (
           <tr key={key} className="t-row">
             <th className="t-row-header cell">{rowHeaders[key]}</th>
             {chairs.map((chair) => (

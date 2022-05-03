@@ -1,6 +1,6 @@
 import CarouselItem from "./CarouselItem";
-import ArrowRight from "./ArrowRight";
-import ArrowLeft from "./ArrowLeft";
+import ArrowRight from "../common/ArrowRight";
+import ArrowLeft from "../common/ArrowLeft";
 import { data } from "./data";
 import "./carousel.css";
 import useCarousel from "./useCarousel";
